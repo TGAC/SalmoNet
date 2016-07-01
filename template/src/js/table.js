@@ -3,22 +3,22 @@ dtable = new webix.ui({
     id:"dtable",
     view:"datatable",
     columns:[
-        { id:"uniprot", map:"#data1#", header:["UniProt AC", {content:"textFilter"}], adjust:true},
-        { id:"genename", map:"#data2#", header:["Gene name", {content:"textFilter"}], adjust:true},
-        { id:"locus", map:"#data3#", header:["Locus", {content:"textFilter"}], adjust:true},
+        { id:"uniprot", map:"#data1#", header:["UniProt AC", {content:"textFilter"}], width:100},
+        { id:"genename", map:"#data2#", header:["Gene name", {content:"textFilter"}], width:200},
+        { id:"locus", map:"#data3#", header:["Locus", {content:"textFilter"}], width:200},
         // { id:"strain", map:"#data4#", header:["Strain", {content:"selectFilter"}], fillspace:true},
-        { id:"numort", map:"#data5#", header:"Othologs", adjust:true},
-        { id:"numint", map:"#data6#", header:"Interactions", adjust:true}
+        { id:"numort", map:"#data5#", header:"Othologs", width:80},
+        { id:"numint", map:"#data6#", header:"Interactions", width:80}
     ],
     resizeColumn:true,
     datatype:"csv",
     url:'data/nodes.csv',
     autoheight:true,
-    // autowidth:true,
+    autowidth:true,
     pager: {
         template: "{common.prev()}{common.next()}Page {common.page()} from #limit#",
         container: "paging_here",
-        size: 15,
+        size: 10,
         group: 5
     },
     hover:"browse_row_hover",
@@ -30,15 +30,13 @@ dtable = new webix.ui({
                 }
     }
 });
-var strain_select = [{
+webix.extend($$("dtable"), webix.ProgressBar);
+var strain_select = [
+    { view:"label", label:"Select a strain:" },
+    {
     view:"select",
     name: "strain",
-    label:"Select strain",
-    options:[
-        "data/nodes1.csv",
-        "data/nodes2.csv",
-        "data/nodes3.csv"
-    ]
+    options: "data/strain_select.json"
 }];
 strain_select_form = new webix.ui({
     container:"strain_select_div",
@@ -49,9 +47,13 @@ strain_select_form = new webix.ui({
     elements: strain_select
 });
 $$("strain_select_form").elements["strain"].attachEvent("onChange", function(newv, oldv){
-    dtable.clearAll()
-    dtable.url=newv;
-    dtable.load(newv);
+    $$("dtable").showProgress({
+        type:"bottom",
+        delay:3000,
+        hide:true
+    });
+    dtable.clearAll();
+    dtable.load("data/nodes"+newv+".csv");
     $$("dtable").refresh();
-    webix.message("Value changed from: "+oldv+" to: "+newv);
+    // webix.message("Value changed from: "+oldv+" to: "+newv);
 });

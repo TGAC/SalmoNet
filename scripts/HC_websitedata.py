@@ -40,9 +40,12 @@ with open("../data/HC_interactions.csv") as f:
 for node in SalmoNet["node"]:
     SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
 
+select = []
+select.append({"value": "Select a strain", "id": 0})
 nn = 1
 for s in strains:
     with open("../template/src/data/nodes%s.csv" % nn, "w") as f:
+        select.append({"id":nn,"value":s})
         n = 0
         for node in SalmoNet["node"]:
             if SalmoNet["node"][node]["strain"] == s:
@@ -57,3 +60,6 @@ for s in strains:
                 ))
                 n += 1
     nn += 1
+
+with open("../template/src/data/strain_select.json", "w") as f:
+    json.dump(select, f)
