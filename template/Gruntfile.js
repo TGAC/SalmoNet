@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/css/style.css': ['src/css/*.css', 'template/node_modules/webix/webix.css']
+                    'dist/css/style.css': ['src/css/*.css', 'node_modules/webix/webix.css']
                 }
             }
         },
@@ -27,8 +27,7 @@ module.exports = function(grunt) {
             },  
             dist: {
                 src: [
-                    'node_modules/uikit/src/js/components/sticky.js',
-                    'node_modules/uikit/src/js/core/*.js',
+                    'template/node_modules/uikit/dist/js/uikit.js',
                     'node_modules/jquery/dist/jquery.js',
                     'node_modules/webix/webix.js',
                     'src/js/*.js'

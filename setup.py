@@ -11,6 +11,7 @@ setup(name='SalmoNetWeb',
       packages=['SalmoNetWeb'],
       install_requires=[
           'invoke==0.13.0',
+          'PyYAML==3.11',
       ],
       zip_safe=False
-)
+      )
