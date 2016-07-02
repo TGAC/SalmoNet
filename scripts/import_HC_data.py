@@ -17,6 +17,7 @@ def import_HC_data(node_file, interaction_file):
                 "strain": row[4],
                 "num_ortholog": 0,
                 "num_interaction": 0,
+                "interactions": [],
             }
             if row[3] not in SalmoNet["groups"]:
                 SalmoNet["groups"][row[3]] = []
@@ -36,6 +37,9 @@ def import_HC_data(node_file, interaction_file):
             }
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             SalmoNet["node"][row[1]]["num_interaction"] += 1
+            icsv = "%s,%s,%s,%s" % (row[0], row[1], " ".join(ref), row[3])
+            SalmoNet["node"][row[0]]["interactions"].append(icsv)
+            SalmoNet["node"][row[1]]["interactions"].append(icsv)
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
     return SalmoNet
@@ -66,12 +70,23 @@ def export_strain_node_lists(SalmoNet, files_prefix):
 
 def export_protein_data(SalmoNet, path):
     for uniprot in SalmoNet["node"]:
+        # uniprot = "P0A2Q3"
         with open("%s/%s.md" % (path, uniprot), "w") as f:
             md_data = {}
             md_data["title"] = uniprot
+            md_data["description"] = uniprot
+            md_data["date"] = "2016-07-01"
+            #
+            md_data["genename"] = SalmoNet["node"][uniprot]["name"]
+            md_data["locus"] = SalmoNet["node"][uniprot]["locus"]
+            md_data["strain"] = SalmoNet["node"][uniprot]["strain"]
+            md_data["uniprot"] = uniprot
+
+            #
             md = yaml.dump(md_data, allow_unicode=True,
                       default_flow_style=False,
                       explicit_start=True, explicit_end=True,
-                      default_style="'", line_break="/n")
-            f.write(md+"\ntest\n")
-        return
+                      default_style="'", line_break="/n")[:-4]
+            md += "---\n"
+            md += "\n".join(SalmoNet["node"][uniprot]["interactions"])
+            f.write(md)

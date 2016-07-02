@@ -1,0 +1,65 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>{{ .Params.genename }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr class="uk-grid-divider">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+<dl class="uk-description-list-horizontal">
+    <dt>Name</dt>
+    <dd>{{ .Params.genename }}</dd>
+    <dt>Locus</dt>
+    <dd>{{ .Params.locus }}</dd>
+    <dt>Strain</dt>
+    <dd>{{ .Params.strain }}</dd>
+    <dt>Uniprot Accession</dt>
+    <dd>{{ .Params.uniprot }}</dd>
+
+</dl>
+        </div>
+        <div class="uk-width-medium-1-2">
+
+        </div>
+    </div>
+
+    <hr class="uk-grid-divider">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div id="interactiontable" style="height:200px;"></div>
+            <script>
+                interactiontable = webix.ui({
+				container:"interactiontable",
+				view:"datatable",
+				columns:[
+					{ id:"data0",	header:"Source", css:"rank",  		width:120},
+					{ id:"data1",	header:"Target",width:120},
+					{ id:"data2",	header:"Ref" , width:200},
+					{ id:"data3",	header:"Layer", 	width:200}
+				],
+				autoheight:true,
+				autowidth:true,
+
+				datatype:"csv",
+				data:'{{ .Content }}'
+			});
+            </script>
+        </div>
+    </div>
+</div>
+
+{{ partial "offcanvas.html" . }}
+
+{{ partial "analytics.html" . }}
+</body>
+</html>
