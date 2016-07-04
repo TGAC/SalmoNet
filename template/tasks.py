@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from invoke import task
 import os
-
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 
 @task()
@@ -10,7 +10,7 @@ def test(ctx):
 
 @task()
 def cd(ctx):
-    os.chdir("template")
+    os.chdir(ROOT_PATH)
 
 @task(cd)
 def npm_install(ctx):

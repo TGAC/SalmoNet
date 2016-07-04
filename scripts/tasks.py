@@ -17,19 +17,19 @@ def test(ctx):
 
 @task()
 def clear_dev(ctx):
-    ctx.run("rm %s/*" % dev_path)
+    ctx.run("rm -rf %s/*" % dev_path, warn=True)
 
 @task()
 def clear_deploy(ctx):
-    ctx.run("rm %s/*" % deploy_path)
+    ctx.run("rm -rf %s/*" % deploy_path, warn=True)
 
 @task()
 def clear_protein_pages(ctx):
-    ctx.run("rm %s/*" % pages_path)
+    ctx.run("rm -rf %s/*" % pages_path, warn=True)
 
 @task()
 def clear_temp(ctx):
-    ctx.run("rm %s/*" % temp_path)
+    ctx.run("rm -rf %s/*" % temp_path)
 
 @task(clear_temp)
 def import_data(ctx):
@@ -60,7 +60,7 @@ def copy_deploy(ctx):
     ctx.run("cp %s/nodes* %s/" % (temp_path, deploy_path))
 
 @task(clear_protein_pages, import_data)
-def export_protein_pages(ctx):
+def export_protein_pages(ctx, just_one=False):
     with open(SalmoNetJson) as data_file:
         SalmoNet = json.load(data_file)
-        export_protein_data(SalmoNet, pages_path)
+        export_protein_data(SalmoNet, pages_path, just_one)

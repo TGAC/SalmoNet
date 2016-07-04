@@ -4,11 +4,11 @@ $(function () {
         id: "dtable",
         view: "datatable",
         columns: [
-            {id: "uniprot", map: "#data1#", header: ["UniProt AC", {content: "textFilter"}], width: 100},
-            {id: "genename", map: "#data2#", header: ["Gene name", {content: "textFilter"}], width: 200},
-            {id: "locus", map: "#data3#", header: ["Locus", {content: "textFilter"}], width: 200},
-            {id: "numort", map: "#data4#", header: "Othologs", width: 80},
-            {id: "numint", map: "#data5#", header: "Interactions", width: 80}
+            {id: "uniprot", map: "#data1#", header: ["UniProt AC", {content: "textFilter"}], width: 150},
+            {id: "genename", map: "#data2#", header: ["Gene name", {content: "textFilter"}], width: 250},
+            {id: "locus", map: "#data3#", header: ["Locus", {content: "textFilter"}], width: 250},
+            {id: "numort", map: "#data4#", header: "Othologs", width: 150},
+            {id: "numint", map: "#data5#", header: "Interactions", width: 150}
         ],
         resizeColumn: true,
         datatype: "csv",
@@ -18,13 +18,13 @@ $(function () {
         pager: {
             template: "{common.prev()}{common.next()}Page {common.page()} from #limit#",
             container: "paging_here",
-            size: 10,
+            size: 25,
             group: 5
         },
         hover: "browse_row_hover",
         on: {
             "onItemClick": function (id, e, trg) {
-                window.location.href = data_url_prefix+"protein/"+dtable.getItem(id.row).uniprot+"/";
+                window.location.href = data_url_prefix+"protein/"+dtable.getItem(id.row).uniprot+".html";
                 // window.location.href = "uniprot.html";
                 //webix.message("Click on row: "+dtable.getItem(id.row).uniprot);
             }
@@ -32,7 +32,7 @@ $(function () {
     });
     webix.extend($$("dtable"), webix.ProgressBar);
     var strain_select = [
-        {view: "label", label: "Select a strain:"},
+        {view: "label", label: "Select a <i>Salmonella enterica</i> strain:"},
         {
             view: "select",
             name: "strain",
@@ -57,4 +57,49 @@ $(function () {
         $$("dtable").refresh();
         // webix.message("Value changed from: "+oldv+" to: "+newv);
     });
+    $(window).resize(function() {
+        if ($(window).width() < 1050){
+            dtable.hideColumn("numort");
+            dtable.hideColumn("numint");
+        }
+        if ($(window).width() >= 1050){
+            dtable.showColumn("numort");
+            dtable.showColumn("numint");
+        }
+        if ($(window).width() < 850){
+            dtable.setColumnWidth("uniprot", 80);
+            dtable.setColumnWidth("genename", 120);
+            dtable.setColumnWidth("locus", 120);
+        }
+        if ($(window).width() >= 850){
+            dtable.setColumnWidth("uniprot", 150);
+            dtable.setColumnWidth("genename", 250);
+            dtable.setColumnWidth("locus", 250);
+        }
+    });
+    if ($(window).width() < 1050){
+        dtable.hideColumn("numort");
+        dtable.hideColumn("numint");
+    }
+    if ($(window).width() < 850){
+        dtable.setColumnWidth("uniprot", 80);
+        dtable.setColumnWidth("genename", 120);
+        dtable.setColumnWidth("locus", 120);
+    }
+    // protein page
+    // interactiontable = webix.ui({
+    //     container: "interactiontable",
+    //     view: "datatable",
+    //     columns: [
+    //         {id: "data0", header: ["Interactor", {content: "textFilter"}], css: "rank", width: 120},
+    //         {id: "data1", header: ["Interactor", {content: "textFilter"}], width: 120},
+    //         {id: "data2", header: "Source", width: 200},
+    //         {id: "data3", header: ["Layer", {content: "selectFilter"}], width: 200}
+    //     ],
+    //     autoheight: true,
+    //     autowidth: true,
+    //
+    //     datatype: "csv",
+    //     data: '{{ .Content }}'
+    // });
 });

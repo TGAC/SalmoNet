@@ -21,7 +21,7 @@ def import_HC_data(node_file, interaction_file):
             }
             if row[3] not in SalmoNet["groups"]:
                 SalmoNet["groups"][row[3]] = []
-            SalmoNet["groups"][row[3]].append(row[0])
+            SalmoNet["groups"][row[3]].append({"stain": row[4], "uniprot": row[0]})
             if row[4] not in SalmoNet["strains"]:
                 SalmoNet["strains"].append(row[4])
     with open(interaction_file) as f:
@@ -37,11 +37,12 @@ def import_HC_data(node_file, interaction_file):
             }
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             SalmoNet["node"][row[1]]["num_interaction"] += 1
-            icsv = "%s,%s,%s,%s" % (row[0], row[1], " ".join(ref), row[3])
+            icsv = "%s,%s,%s,%s" % (SalmoNet["node"][row[0]]["name"], SalmoNet["node"][row[1]]["name"], " ".join(ref), row[3])
             SalmoNet["node"][row[0]]["interactions"].append(icsv)
             SalmoNet["node"][row[1]]["interactions"].append(icsv)
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
+        SalmoNet["node"][node]["orthologs"] = SalmoNet["groups"][SalmoNet["node"][node]["group"]]
     return SalmoNet
 
 
@@ -68,9 +69,10 @@ def export_strain_node_lists(SalmoNet, files_prefix):
                         SalmoNet["node"][node]["num_interaction"],
                     ))
 
-def export_protein_data(SalmoNet, path):
+def export_protein_data(SalmoNet, path, just_one=False):
     for uniprot in SalmoNet["node"]:
-        # uniprot = "P0A2Q3"
+        if just_one:
+            uniprot = "P0A2Q3"
         with open("%s/%s.md" % (path, uniprot), "w") as f:
             md_data = {}
             md_data["title"] = uniprot
@@ -80,6 +82,7 @@ def export_protein_data(SalmoNet, path):
             md_data["genename"] = SalmoNet["node"][uniprot]["name"]
             md_data["locus"] = SalmoNet["node"][uniprot]["locus"]
             md_data["strain"] = SalmoNet["node"][uniprot]["strain"]
+            md_data["orthologs"] = SalmoNet["node"][uniprot]["orthologs"]
             md_data["uniprot"] = uniprot
 
             #
@@ -90,3 +93,5 @@ def export_protein_data(SalmoNet, path):
             md += "---\n"
             md += "\n".join(SalmoNet["node"][uniprot]["interactions"])
             f.write(md)
+        if just_one:
+            return
