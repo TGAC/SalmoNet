@@ -22,6 +22,7 @@ def clear_dev(ctx):
 @task()
 def clear_deploy(ctx):
     ctx.run("rm -rf %s/*" % deploy_path, warn=True)
+    ctx.run("rm -rf SalmoNet/static/download/*", warn=True)
 
 @task()
 def clear_protein_pages(ctx):
@@ -58,6 +59,7 @@ def copy_dev(ctx):
 def copy_deploy(ctx):
     ctx.run("cp %s/strain_select.json %s/" % (temp_path, deploy_path))
     ctx.run("cp %s/nodes* %s/" % (temp_path, deploy_path))
+    ctx.run("cp data/download/* SalmoNet/static/download/")
 
 @task(clear_protein_pages, import_data)
 def export_protein_pages(ctx, just_one=False):

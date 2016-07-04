@@ -1,0 +1,72 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>Download</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-grid">
+        <div class="uk-width-medium-1-5">
+        </div>
+        <div class="uk-width-medium-3-5">
+            <div id="downloadform"></div>
+            <script>
+    //
+    function downloadfn(){
+        var url = "/download/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
+//        webix.message("download: "+url);
+        document.getElementById('downloadframe').src = url;
+    }
+    downloadform = new webix.ui({
+        container: "downloadform",
+        id: "downloadform",
+        view: "form",
+        scroll: false,
+        width: "100%",
+        elements: [
+            { view:"select", label:"Strain", name: "strain", options:[
+                    {id:"", value:"Consensus" },
+                    {id:"Salmonella_enterica_serovar_Agona_SL483", value:"Salmonella enterica serovar Agona SL483" },
+                    {id:"Salmonella_enterica_serovar_Choleraesuis_SC-B67", value:"Salmonella enterica serovar Choleraesuis SC-B67"},
+                    {id:"Salmonella_enterica_serovar_Dublin_CT_02021853", value:"Salmonella enterica serovar Dublin_CT 02021853" },
+                    {id:"Salmonella_enterica_serovar_Enteritidis_P125109", value:"Salmonella enterica serovar Enteritidis P125109" },
+                    {id:"Salmonella_enterica_serovar_Gallinarum_287_91", value:"Salmonella enterica serovar Gallinarum 287 91" },
+                    {id:"Salmonella_enterica_serovar_Heidelberg_SL476", value:"Salmonella enterica serovar Heidelberg SL476" },
+                    {id:"Salmonella_enterica_serovar_Newport_SL254", value:"Salmonella enterica serovar Newport SL254" },
+                    {id:"Salmonella_enterica_serovar_Paratyphi_A_ATCC_9150", value:"Salmonella enterica serovar Paratyphi A ATCC 9150" },
+                    {id:"Salmonella_enterica_serovar_Typhi_strain_CT18", value:"Salmonella enterica serovar Typhi strain CT18" },
+                    {id:"Salmonella_enterica_serovar_Typhimurium_LT2", value:"Salmonella enterica serovar Typhimurium LT2" },
+                    {id:"Salmonella_enterica_serovar_Typhimurium_SL1344", value:"Salmonella enterica serovar Typhimurium SL1344" }
+            ] },
+            { view:"select", label:"Layer", name: "layer", options:[
+                    {id:"", value:"All" },
+                    {id:"PN", value:"Protein-protein interaction" },
+                    {id:"RN", value:"Regulatory" },
+                    {id:"MN", value:"Metabolic" }
+            ] },
+            { view:"select", label:"Format", name: "format", options:[
+                    {id:"csv", value:"CSV" },
+                    {id:"cys", value:"Cyoscape" }
+            ] },
+            { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn}
+        ]
+    });
+
+    //
+            </script>
+        </div>
+        <div class="uk-width-medium-1-5">
+        </div>
+    </div>
+</div>
+<iframe id="downloadframe" style="display:none"></iframe>
+{{ partial "offcanvas.html" . }}
+
+{{ partial "analytics.html" . }}
+</body>
+</html>
