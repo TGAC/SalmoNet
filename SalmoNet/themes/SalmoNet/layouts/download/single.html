@@ -30,7 +30,7 @@
         width: "100%",
         elements: [
             { view:"select", label:"Strain", name: "strain", options:[
-                    {id:"", value:"Consensus" },
+                    {id:"SalmoNet_Consensus", value:"Consensus" },
                     {id:"Salmonella_enterica_serovar_Agona_SL483", value:"Salmonella enterica serovar Agona SL483" },
                     {id:"Salmonella_enterica_serovar_Choleraesuis_SC-B67", value:"Salmonella enterica serovar Choleraesuis SC-B67"},
                     {id:"Salmonella_enterica_serovar_Dublin_CT_02021853", value:"Salmonella enterica serovar Dublin_CT 02021853" },
@@ -44,7 +44,7 @@
                     {id:"Salmonella_enterica_serovar_Typhimurium_SL1344", value:"Salmonella enterica serovar Typhimurium SL1344" }
             ] },
             { view:"select", label:"Layer", name: "layer", options:[
-                    {id:"", value:"All" },
+                    {id:"allnetworks", value:"All" },
                     {id:"PN", value:"Protein-protein interaction" },
                     {id:"RN", value:"Regulatory" },
                     {id:"MN", value:"Metabolic" }
@@ -53,7 +53,8 @@
                     {id:"csv", value:"CSV" },
                     {id:"cys", value:"Cyoscape" }
             ] },
-            { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn}
+            { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn},
+            {view: "label", label: "<a href='/download/homolog_groups.csv'>Download ortholog groups details</a>"}
         ]
     });
 

@@ -3,6 +3,7 @@ $(function () {
         container: "browsetable",
         id: "dtable",
         view: "datatable",
+        css:"salmonet_table",
         columns: [
             {id: "uniprot", map: "#data1#", header: ["UniProt AC", {content: "textFilter"}], width: 150},
             {id: "genename", map: "#data2#", header: ["Gene name", {content: "textFilter"}], width: 250},
@@ -16,6 +17,7 @@ $(function () {
         autoheight: true,
         autowidth: true,
         pager: {
+            css:"salmonet_table",
             template: "{common.prev()}{common.next()}Page {common.page()} from #limit#",
             container: "paging_here",
             size: 25,
@@ -39,6 +41,7 @@ $(function () {
             options: data_url_prefix+"data/strain_select.json"
         }];
     strain_select_form = new webix.ui({
+        css:"salmonet_form",
         container: "strain_select_div",
         id: "strain_select_form",
         view: "form",

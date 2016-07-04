@@ -3,13 +3,13 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        sass: {
-			dist: {
-				files: {
-					'src/css/style.css' : 'src/sass/style.scss'
-                }
-			}
-		},
+        // sass: {
+		// 	dist: {
+		// 		files: {
+		// 			'src/css/style.css' : 'src/sass/style.scss'
+         //        }
+		// 	}
+		// },
         cssmin: {
             options: {
                 shorthandCompacting: false,
@@ -74,6 +74,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
     
-    grunt.registerTask('build',['sass', 'cssmin', 'uglify', 'processhtml']);
+    grunt.registerTask('build',['cssmin', 'uglify', 'processhtml']);
     grunt.registerTask('default',['build']);
 };
