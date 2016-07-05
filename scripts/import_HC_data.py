@@ -84,14 +84,13 @@ def export_protein_data(SalmoNet, path, just_one=False):
             md_data["strain"] = SalmoNet["node"][uniprot]["strain"]
             md_data["orthologs"] = SalmoNet["node"][uniprot]["orthologs"]
             md_data["uniprot"] = uniprot
-
+            md_data["interactioncsv"] = "\n".join(SalmoNet["node"][uniprot]["interactions"])
             #
             md = yaml.dump(md_data, allow_unicode=True,
                       default_flow_style=False,
                       explicit_start=True, explicit_end=True,
                       default_style="'", line_break="/n")[:-4]
             md += "---\n"
-            md += "\n".join(SalmoNet["node"][uniprot]["interactions"])
             f.write(md)
         if just_one:
             return

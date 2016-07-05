@@ -27,8 +27,9 @@ module.exports = function(grunt) {
             },  
             dist: {
                 src: [
-                    'template/node_modules/uikit/dist/js/uikit.js',
                     'node_modules/jquery/dist/jquery.js',
+                    'node_modules/uikit/dist/js/uikit.js',
+                    'node_modules/uikit/dist/js/components/sticky.js',
                     'node_modules/webix/webix.js',
                     'src/js/*.js'
                 ],  
