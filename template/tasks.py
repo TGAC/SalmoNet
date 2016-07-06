@@ -27,6 +27,7 @@ def copy_js(ctx):
 @task(grunt_build)
 def copy_css(ctx):
     ctx.run("cp dist/css/style.css ../SalmoNet/themes/SalmoNet/static/css/style.css")
+    ctx.run("cp node_modules/uikit/dist/fonts/* ../SalmoNet/themes/SalmoNet/static/css/fonts/")
 
 @task(copy_js, copy_css)
 def deploy(ctx):
