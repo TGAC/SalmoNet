@@ -21,7 +21,9 @@ def import_HC_data(node_file, interaction_file):
             }
             if row[3] not in SalmoNet["groups"]:
                 SalmoNet["groups"][row[3]] = []
-            SalmoNet["groups"][row[3]].append({"stain": row[4], "uniprot": row[0]})
+            add_group = {"stain": row[4], "uniprot": row[0]}
+            if add_group not in SalmoNet["groups"][row[3]]:
+                SalmoNet["groups"][row[3]].append(add_group)
             if row[4] not in SalmoNet["strains"]:
                 SalmoNet["strains"].append(row[4])
     with open(interaction_file) as f:
@@ -72,7 +74,8 @@ def export_strain_node_lists(SalmoNet, files_prefix):
 def export_protein_data(SalmoNet, path, just_one=False):
     for uniprot in SalmoNet["node"]:
         if just_one:
-            uniprot = "P0A2Q3"
+            # uniprot = "P0A2Q3"
+            uniprot = "B5R658"
         with open("%s/%s.md" % (path, uniprot), "w") as f:
             md_data = {}
             md_data["title"] = uniprot
