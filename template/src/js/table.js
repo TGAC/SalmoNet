@@ -3,7 +3,7 @@ $(function () {
         container: "browsetable",
         id: "dtable",
         view: "datatable",
-        css:"salmonet_table",
+        css:"salmonet_table protein_link",
         columns: [
             {id: "uniprot", map: "#data1#", header: ["UniProt AC", {content: "textFilter"}], width: 150},
             {id: "genename", map: "#data2#", header: ["Gene name", {content: "textFilter"}], width: 250},
