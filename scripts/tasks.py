@@ -6,7 +6,7 @@ from .import_HC_data import import_HC_data, export_strain_select_json,\
     export_strain_node_lists, export_protein_data
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
-SalmoNetJson = os.path.join(ROOT_PATH, "..", "scripts","temp_data","SalmoNet.json")
+SalmoNetJson = os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data","SalmoNet.json")
 temp_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data"))
 data_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "data"))
 dev_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "template","src","data"))
