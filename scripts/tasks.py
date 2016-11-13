@@ -6,7 +6,7 @@ from .import_HC_data import import_HC_data, export_strain_select_json,\
     export_strain_node_lists, export_protein_data
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
-SalmoNetJson = os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data","SalmoNet.json")
+SalmoNetJson = "SalmoNet.json"
 temp_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data"))
 data_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "data"))
 dev_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "template","src","data"))
@@ -47,18 +47,18 @@ def make_dirs(ctx):
 @task(make_dirs)
 def import_data(ctx):
     SalmoNet = import_HC_data(os.path.join(data_path, "HC_nodes.csv"), os.path.join(data_path,"HC_interactions.csv"))
-    with open(SalmoNetJson, "w") as f:
+    with open(os.path.join(temp_path, SalmoNetJson), "w") as f:
         json.dump(SalmoNet, f)
 
 @task(make_dirs)
 def export_strain_select(ctx):
-    with open(SalmoNetJson) as data_file:
+    with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
         SalmoNet = json.load(data_file)
         export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
 
 @task(make_dirs)
 def export_strain_nodes(ctx):
-    with open(SalmoNetJson) as data_file:
+    with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
         SalmoNet = json.load(data_file)
         export_strain_node_lists(SalmoNet, temp_path)
 
@@ -75,6 +75,6 @@ def copy_deploy(ctx):
 
 @task(clear_protein_pages, import_data)
 def export_protein_pages(ctx, just_one=False):
-    with open(SalmoNetJson) as data_file:
+    with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
         SalmoNet = json.load(data_file)
         export_protein_data(SalmoNet, pages_path, just_one)
