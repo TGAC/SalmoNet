@@ -36,18 +36,24 @@ def clear_temp(ctx):
     ctx.run("rm -rf %s/*" % temp_path)
 
 @task(clear_temp)
+def make_dirs(ctx):
+    os.makedirs(temp_path)
+    os.makedirs(pages_path)
+    os.makedirs(download_path)
+
+@task(make_dirs)
 def import_data(ctx):
     SalmoNet = import_HC_data(os.path.join(data_path, "HC_nodes.csv"), os.path.join(data_path,"HC_interactions.csv"))
     with open(SalmoNetJson, "w") as f:
         json.dump(SalmoNet, f)
 
-@task(import_data)
+@task(make_dirs)
 def export_strain_select(ctx):
     with open(SalmoNetJson) as data_file:
         SalmoNet = json.load(data_file)
         export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
 
-@task(import_data)
+@task(make_dirs)
 def export_strain_nodes(ctx):
     with open(SalmoNetJson) as data_file:
         SalmoNet = json.load(data_file)
