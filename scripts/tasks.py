@@ -66,14 +66,15 @@ def export_strain_nodes(ctx):
 
 @task(export_strain_select, export_strain_nodes, clear_dev)
 def copy_dev(ctx):
-    ctx.run("cp %s/strain_select.json %s/." % (temp_path, dev_path))
+    ctx.run("cp %s %s/." % (os.path.join(temp_path, "strain_select.json"), os.path.join(dev_path, "strain_select.json")))
     ctx.run("cp %s/nodes* %s/." % (temp_path, dev_path))
 
 @task(export_strain_select, export_strain_nodes, clear_deploy)
 def copy_deploy(ctx):
-    ctx.run("cp %s/strain_select.json %s/." % (temp_path, deploy_path))
-    ctx.run("cp %s/nodes* %s/." % (temp_path, deploy_path))
-    ctx.run("cp %s/* %s/." % (os.path.join(data_path, "download"), download_path))
+    ctx.run("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")))
+    ctx.run("for file in %s*; do cp \"$file\" \"%s/$file\";done"  % (os.path.join(temp_path,"nodes"), deploy_path))
+    #ctx.run("cp %s/nodes* %s/." % (temp_path, deploy_path))
+    ctx.run("cp %s %s" % (os.path.join(data_path, "download"), download_path))
 
 @task(clear_protein_pages, import_data)
 def export_protein_pages(ctx, just_one=False):
