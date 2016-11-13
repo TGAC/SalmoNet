@@ -37,9 +37,12 @@ def clear_temp(ctx):
 
 @task(clear_temp)
 def make_dirs(ctx):
-    os.makedirs(temp_path)
-    os.makedirs(pages_path)
-    os.makedirs(download_path)
+    if not os.path.exists(temp_path):
+        os.makedirs(temp_path)
+    if not os.path.exists(pages_path):
+        os.makedirs(pages_path)
+    if not os.path.exists(download_path):
+        os.makedirs(download_path)
 
 @task(make_dirs)
 def import_data(ctx):
