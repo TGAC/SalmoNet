@@ -43,6 +43,8 @@ def make_dirs(ctx):
         os.makedirs(pages_path)
     if not os.path.exists(download_path):
         os.makedirs(download_path)
+    if not os.path.exists(dev_path):
+        os.makedirs(dev_path)
 
 @task(make_dirs)
 def import_data(ctx):
