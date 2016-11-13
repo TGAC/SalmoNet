@@ -52,6 +52,8 @@ def import_data(ctx):
 
 @task(make_dirs)
 def export_strain_select(ctx):
+    ctx.run("touch %s" % os.path.join(temp_path, SalmoNetJson))
+    ctx.run("ls -lah %s" % os.path.join(temp_path, SalmoNetJson))
     with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
         SalmoNet = json.load(data_file)
         export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
