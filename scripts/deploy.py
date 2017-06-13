@@ -7,12 +7,12 @@ from import_HC_data import import_HC_data, export_strain_select_json,\
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 SalmoNetJson = "SalmoNet.json"
-temp_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data"))
-data_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "data"))
-dev_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "template","src","data"))
-deploy_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","static","data"))
-download_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","static","download"))
-pages_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","content","protein"))
+temp_path = os.path.abspath(os.path.join(ROOT_PATH, "scripts","temp_data"))
+data_path = os.path.abspath(os.path.join(ROOT_PATH, "data"))
+dev_path = os.path.abspath(os.path.join(ROOT_PATH, "template","src","data"))
+deploy_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","static","data"))
+download_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","static","download"))
+pages_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","content","protein"))
 
 # make dirs
 if not os.path.exists(temp_path):
