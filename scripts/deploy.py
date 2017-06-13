@@ -2,7 +2,7 @@
 import subprocess
 import os
 import json
-from .import_HC_data import import_HC_data, export_strain_select_json,\
+from import_HC_data import import_HC_data, export_strain_select_json,\
     export_strain_node_lists, export_protein_data
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
