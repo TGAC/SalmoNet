@@ -46,8 +46,10 @@ with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
 
 # clear protein pages
-subprocess.call("rm -rf %s/*" % pages_path, stdout=subprocess.PIPE)
-
+try:
+	subprocess.call("rm -rf %s/*" % pages_path, stdout=subprocess.PIPE)
+except FileNotFoundError:
+	pass
 # export protein pages
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
