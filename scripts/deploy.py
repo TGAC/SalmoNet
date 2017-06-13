@@ -25,7 +25,10 @@ if not os.path.exists(dev_path):
     os.makedirs(dev_path)
 
 # clear temp
-subprocess.call("rm -rf %s/*" % temp_path, stdout=subprocess.PIPE)
+try:
+    subprocess.call("rm -rf %s/*" % temp_path, stdout=subprocess.PIPE)
+except OSError:
+    pass
 
 # import data
 SalmoNet = import_HC_data(os.path.join(data_path, "HC_nodes.csv"), os.path.join(data_path,"HC_interactions.csv"))

@@ -38,7 +38,7 @@ cd ..
 
 # process data
 cd scripts
-python deploy.py 
+python3 deploy.py 
 cd ..
 
 # prepare deploy repo
