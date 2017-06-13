@@ -53,7 +53,7 @@ except FileNotFoundError:
 # export protein pages
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
-    export_protein_data(SalmoNet, pages_path, just_one)
+    export_protein_data(SalmoNet, pages_path, False)
 
 # copy deploy
 subprocess.call("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")), stdout=subprocess.PIPE)
