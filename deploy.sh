@@ -28,7 +28,7 @@ GITHUB_REPO_SSH_URL="git@github.com:$GITHUB_USER/$GITHUB_REPO.git"
 git remote set-url origin $GITHUB_REPO_SSH_URL
 
 # generate template
-cd travisci_rsa
+cd template
 npm install
 grunt build
 cp dist/js/app.js ../SalmoNet/themes/SalmoNet/static/js/app.js
