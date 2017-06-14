@@ -53,3 +53,6 @@ git add --all
 git commit -am "automatic deploy"
 git push origin gh-pages
 cd ..
+
+#remove deploy key
+ssh-add -D
