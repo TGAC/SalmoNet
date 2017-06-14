@@ -7,12 +7,12 @@ from import_HC_data import import_HC_data, export_strain_select_json,\
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 SalmoNetJson = "SalmoNet.json"
-temp_path = os.path.abspath(os.path.join(ROOT_PATH, "scripts","temp_data"))
-data_path = os.path.abspath(os.path.join(ROOT_PATH, "data"))
-dev_path = os.path.abspath(os.path.join(ROOT_PATH, "template","src","data"))
-deploy_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","static","data"))
-download_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","static","download"))
-pages_path = os.path.abspath(os.path.join(ROOT_PATH,"SalmoNet","content","protein"))
+temp_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "scripts","temp_data"))
+data_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "data"))
+dev_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir, "template","src","data"))
+deploy_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","static","data"))
+download_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","static","download"))
+pages_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","content","protein"))
 
 # make dirs
 if not os.path.exists(temp_path):
@@ -56,6 +56,7 @@ with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     export_protein_data(SalmoNet, pages_path, False)
 
 # copy deploy
+print("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")))
 subprocess.call("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")), stdout=subprocess.PIPE)
 subprocess.call("for file in %s*; do cp \"$file\" \"%s/$file\";done"  % (os.path.join(temp_path,"nodes"), deploy_path), stdout=subprocess.PIPE)
 subprocess.call("cp %s %s" % (os.path.join(data_path, "download"), download_path), stdout=subprocess.PIPE)
