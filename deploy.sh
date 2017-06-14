@@ -39,7 +39,7 @@ mkdir -p dist
 git clone git@github.com:TGAC/SalmoNet.git dist
 cd dist
 git checkout gh-pages
-git rm -rf *
+#git rm -rf *
 cd ..
 
 # generate static site
