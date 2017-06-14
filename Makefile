@@ -1,4 +1,4 @@
-.PHONY : clean deploy_config template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis
+.PHONY : clean deploy_config template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis dev_data serve
 
 clean:
 	rm -rf scripts/temp_data
@@ -11,12 +11,6 @@ clean:
 	mkdir -p dist
 
 deploy_config:
-	# decrypt deploy key
-	openssl aes-256-cbc -K $(encrypted_56a395b73f83_key) -iv $(encrypted_56a395b73f83_iv) -in travisci_rsa.enc -out travisci_rsa -d
-	chmod 600 travisci_rsa
-	eval `ssh-agent -s`
-	ssh-add travisci_rsa
-	rm travisci_rsa
 	# config git
 	git config user.name "Travis CI"
 	git config user.email "$(COMMIT_AUTHOR_EMAIL)"
@@ -39,7 +33,7 @@ data:
 	cd scripts; \
 		python3 deploy.py
 
-dev_data:
+dev_data: clean
 	cd scripts; \
 		python3 deploy.py dev
 
@@ -66,3 +60,7 @@ deploy_github: copy_site_to_dist
 
 travis: deploy_github
 	ssh-add -D
+
+serve: dev_data template
+	cd SalmoNet; \
+		hugo serve --uglyURLs

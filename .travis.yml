@@ -10,6 +10,11 @@ before_install:
         npm
     - wget https://github.com/spf13/hugo/releases/download/v0.17/hugo_0.17-64bit.deb
     - sudo dpkg -i hugo_0.17-64bit.deb
+    - openssl aes-256-cbc -K $encrypted_56a395b73f83_key -iv $encrypted_56a395b73f83_iv -in travisci_rsa.enc -out travisci_rsa -d
+    - chmod 600 travisci_rsa
+    - eval `ssh-agent -s`
+    - ssh-add travisci_rsa
+    - rm travisci_rsa
 install:
     - pip3 install -r requirements.txt
 script: make travis
