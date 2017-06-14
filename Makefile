@@ -1,4 +1,4 @@
-.PHONY : clean deploy_config template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis dev_data serve
+.PHONY : clean template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis dev_data serve
 
 clean:
 	rm -rf scripts/temp_data
@@ -9,10 +9,6 @@ clean:
 	mkdir -p SalmoNet/public
 	rm -rf dist
 	mkdir -p dist
-
-deploy_config:
-	bash deploy.sh
-
 
 template:
 	cd template; \
