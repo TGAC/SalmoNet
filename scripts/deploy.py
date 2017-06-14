@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 import subprocess
 import os
+import sys
 import json
 import shutil
 from import_HC_data import import_HC_data, export_strain_select_json,\
     export_strain_node_lists, export_protein_data
+
+DEV = False
+if len(sys.argv) == 2:
+    if sys.argv[1] == "dev":
+        DEV = True
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 SalmoNetJson = "SalmoNet.json"
@@ -51,7 +57,7 @@ subprocess.call(["rm","-rf", pages_path+"/*"], stdout=subprocess.PIPE)
 # export protein pages
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
-    export_protein_data(SalmoNet, pages_path, False)
+    export_protein_data(SalmoNet, pages_path, DEV)
 
 # copy deploy
 for src_file in os.listdir(temp_path):
