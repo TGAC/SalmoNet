@@ -47,6 +47,10 @@ cd SalmoNet
 hugo --uglyURLs
 cd ..
 
+# copy site to dist
+cp -r SalmoNet/public/* dist
+echo "salmonet.org" > dist/CNAME
+
 # deploy
 cd dist
 git add --all
