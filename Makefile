@@ -1,4 +1,4 @@
-.PHONY : clean deploy_config template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis dev_data serve
+.PHONY : clean template data hugo_generate prepare_deploy_repo copy_site_to_dist deploy_github travis dev_data serve
 
 clean:
 	rm -rf scripts/temp_data
@@ -9,17 +9,6 @@ clean:
 	mkdir -p SalmoNet/public
 	rm -rf dist
 	mkdir -p dist
-
-deploy_config:
-	# config git
-	git config user.name "Travis CI"
-	git config user.email "$(COMMIT_AUTHOR_EMAIL)"
-	git config push.default tracking
-	GITHUB_REPO_URL=`git remote -v | grep -m1 '^origin' | sed -Ene's#.*(https://[^[:space:]]*).*#\1#p'`
-	GITHUB_USER=`echo $(GITHUB_REPO_URL) | sed -Ene's#https://github.com/([^/]*)/(.*).git#\1#p'`
-	GITHUB_REPO=`echo $(GITHUB_REPO_URL) | sed -Ene's#https://github.com/([^/]*)/(.*).git#\2#p'`
-	GITHUB_REPO_SSH_URL="git@github.com:$(GITHUB_USER)/$(GITHUB_REPO).git"
-	git remote set-url origin $(GITHUB_REPO_SSH_URL)
 
 template:
 	cd template; \
@@ -41,7 +30,7 @@ hugo_generate: data template
 	cd SalmoNet; \
 		hugo --uglyURLs
 
-prepare_deploy_repo: hugo_generate deploy_config
+prepare_deploy_repo: hugo_generate
 	mkdir -p dist
 	git clone git@github.com:TGAC/SalmoNet.git dist
 	cd dist; \
