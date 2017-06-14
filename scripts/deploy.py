@@ -2,6 +2,7 @@
 import subprocess
 import os
 import json
+import shutil
 from import_HC_data import import_HC_data, export_strain_select_json,\
     export_strain_node_lists, export_protein_data
 
@@ -25,10 +26,7 @@ if not os.path.exists(dev_path):
     os.makedirs(dev_path)
 
 # clear temp
-try:
-    subprocess.call("rm -rf %s/*" % temp_path, stdout=subprocess.PIPE)
-except OSError:
-    pass
+subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
 
 # import data
 SalmoNet = import_HC_data(os.path.join(data_path, "HC_nodes.csv"), os.path.join(data_path,"HC_interactions.csv"))
@@ -46,17 +44,17 @@ with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
 
 # clear protein pages
-try:
-	subprocess.call("rm -rf %s/*" % pages_path, stdout=subprocess.PIPE)
-except FileNotFoundError:
-	pass
+subprocess.call(["rm","-rf", pages_path+"/*"], stdout=subprocess.PIPE)
+
 # export protein pages
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
     export_protein_data(SalmoNet, pages_path, False)
 
 # copy deploy
-print("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")))
-subprocess.call("cp %s %s" % (os.path.join(temp_path, "strain_select.json"), os.path.join(deploy_path, "strain_select.json")), stdout=subprocess.PIPE)
-subprocess.call("for file in %s*; do cp \"$file\" \"%s/$file\";done"  % (os.path.join(temp_path,"nodes"), deploy_path), stdout=subprocess.PIPE)
-subprocess.call("cp %s %s" % (os.path.join(data_path, "download"), download_path), stdout=subprocess.PIPE)
+for src_file in os.listdir(temp_path):
+	if src_file == "SalmoNet.json":
+		continue
+	shutil.copy(os.path.join(temp_path, src_file), os.path.join(deploy_path,src_file))
+for src_file in os.listdir(os.path.join(data_path, "download")):
+	shutil.copy(os.path.join(data_path, "download", src_file), os.path.join(download_path,src_file))
