@@ -49,11 +49,35 @@
                         {id: "data2", header: "Source <a style='color: #1F2421 !important;' href='#legend' class='uk-icon-justify uk-icon-question-circle'></a>", width: 200},
                         {id: "data3", header: ["Layer", {content: "selectFilter"}], width: 200}
                     ],
-                    autoheight: true,
+                    height: 500,
                     autowidth: true,
 
                     datatype: "csv",
                     data: '{{ .Params.interactioncsv | safeHTML }}'
+                },
+                {
+                    {
+					view: "form",
+					css: "toolbar",
+					paddingY: 5,
+					paddingX: 10,
+					cols:[
+						{
+							view: "button", label: "Download table", width: 200, click:function(){
+								webix.toExcel($$("interactiontable"), {
+                                    filename: "SalmoNet_{{ .Params.uniprot }}",
+                                    name: "{{ .Params.genename }}",
+                                    columns:{
+                                        "data0":true,
+                                        "data1":true,
+                                        "data2":true,
+                                        "data3":true,
+                                    }
+                                });
+							}
+						}
+					]
+				}
                 });
                 $(window).resize(function() {
                     if ($(window).width() < 850){
