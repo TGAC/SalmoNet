@@ -24,6 +24,8 @@ if not os.path.exists(download_path):
     os.makedirs(download_path)
 if not os.path.exists(dev_path):
     os.makedirs(dev_path)
+if not os.path.exists(deploy_path):
+	os.makedirs(deploy_path)
 
 # clear temp
 subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
