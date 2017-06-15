@@ -39,7 +39,18 @@ def import_HC_data(node_file, interaction_file):
             }
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             SalmoNet["node"][row[1]]["num_interaction"] += 1
-            icsv = "%s,%s,%s,%s" % (SalmoNet["node"][row[0]]["name"], SalmoNet["node"][row[1]]["name"], " ".join(ref), row[3])
+            icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
+                SalmoNet["node"][row[0]]["name"],
+                SalmoNet["node"][row[1]]["name"],
+                " ".join(ref),
+                row[3],
+                SalmoNet["node"][row[0]]["locus"],
+                SalmoNet["node"][row[1]]["locus"],
+                row[0],
+                row[1],
+                SalmoNet["node"][row[0]]["group"],
+                SalmoNet["node"][row[1]]["group"]
+                )
             SalmoNet["node"][row[0]]["interactions"].append(icsv)
             SalmoNet["node"][row[1]]["interactions"].append(icsv)
     for node in SalmoNet["node"]:
