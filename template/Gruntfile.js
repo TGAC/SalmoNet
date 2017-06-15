@@ -21,20 +21,21 @@ module.exports = function(grunt) {
                 }
             }
         },
-        uglify: {  
+        uglify: {
             options: {
-                compress: true  
-            },  
+                compress: true
+            },
             dist: {
                 src: [
                     'node_modules/jquery/dist/jquery.js',
                     'node_modules/uikit/dist/js/uikit.js',
                     'node_modules/uikit/dist/js/components/sticky.js',
                     'node_modules/webix/webix.js',
+                    'node_modules/cytoscape/dist/cytoscape.min.js',
                     'src/js/*.js'
-                ],  
+                ],
                 dest: 'dist/js/app.js'
-            }  
+            }
         },
         processhtml: {
             dist: {
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    
+
     grunt.registerTask('build',['cssmin', 'uglify', 'processhtml']);
     grunt.registerTask('default',['build']);
 };
