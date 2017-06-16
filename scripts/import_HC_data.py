@@ -112,7 +112,10 @@ def export_protein_data(SalmoNet, path, just_one=False):
                 if n["data"]["target"] not in networkjsonnodes:
                     networkjsonnodes[n["data"]["target"]] = True
             for n in networkjsonnodes.keys():
-                SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n}})
+                if n == SalmoNet["node"][uniprot]["name"]:
+                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"main": True}})
+                else:
+                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"main": False}})
             md_data["networkjson"] = json.dumps(SalmoNet["node"][uniprot]["networkjson"])
             #
             md = yaml.dump(md_data, allow_unicode=True,

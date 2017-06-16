@@ -31,7 +31,8 @@ module.exports = function(grunt) {
                     'node_modules/uikit/dist/js/uikit.js',
                     'node_modules/uikit/dist/js/components/sticky.js',
                     'node_modules/webix/webix.js',
-                    'node_modules/cytoscape/dist/cytoscape.min.js',
+                    'node_modules/cytoscape/dist/cytoscape.js',
+                    'node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js',
                     'src/js/*.js'
                 ],
                 dest: 'dist/js/app.js'
