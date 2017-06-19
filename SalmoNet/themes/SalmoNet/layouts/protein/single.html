@@ -41,6 +41,7 @@
             <script>
                 interactiontablediv = webix.ui({
                     container:"interactiontablediv",
+                    autowidth:true,
         			rows: [
                     {
                         id: "interactiontable",
@@ -101,27 +102,40 @@
                 $(window).resize(function() {
                     if ($(window).width() < 850){
                         $$('interactiontable').hideColumn("data2");
-                        $$('interactiontable').setColumnWidth("data0", 80);
-                        $$('interactiontable').setColumnWidth("data1", 80);
-                        $$('interactiontable').setColumnWidth("data3", 100);
+                        // $$('interactiontable').setColumnWidth("data0", 80);
+                        // $$('interactiontable').setColumnWidth("data1", 80);
+                        // $$('interactiontable').setColumnWidth("data3", 100);
                     }
                     if ($(window).width() >= 850){
                         $$('interactiontable').showColumn("data2");
-                        $$('interactiontable').setColumnWidth("data0", 100);
-                        $$('interactiontable').setColumnWidth("data1", 100);
-                        $$('interactiontable').setColumnWidth("data3", 150);
+                        // $$('interactiontable').setColumnWidth("data0", 100);
+                        // $$('interactiontable').setColumnWidth("data1", 100);
+                        // $$('interactiontable').setColumnWidth("data3", 150);
                     }
                 });
                 if ($(window).width() < 850){
                     $$('interactiontable').hideColumn("data2");
-                    $$('interactiontable').setColumnWidth("data0", 80);
-                    $$('interactiontable').setColumnWidth("data1", 80);
+                    // $$('interactiontable').setColumnWidth("data0", 80);
+                    // $$('interactiontable').setColumnWidth("data1", 80);
                 };
+                // interactiontablediv.define("width", $("#interactiontablediv").width());
+                // interactiontablediv.resize();
+                // $(window).resize(function() {
+                //     interactiontablediv.define("width", $("#interactiontablediv").width());
+                //     interactiontablediv.resize();
+                // });
+                // $$('interactiontable').define("width", $("#interactiontablediv").width());
+                // $$('interactiontable').resize();
+                // $(window).resize(function() {
+                //     $$('interactiontable').define("width", $("#interactiontablediv").width());
+                //     $$('interactiontable').resize();
+                // });
             </script>
         </div>
         <div class="uk-width-medium-1-2">
             <h2>&nbsp;</h2>
-            <div id="interactionnetworkdiv" style="height: 500px;"></div>
+            <div id="interactionnetworkdiv" style="height: 453px;"></div>
+            <div id="interactionnetworkcontrolldiv" style="width: 100%;"></div>
             <script>
                 var cy = cytoscape({
                     container: $('#interactionnetworkdiv'),
@@ -167,6 +181,25 @@
                     ]
                 });
                 cy.fit();
+                interactionnetworkcontrolldiv = webix.ui({
+                    container:"interactionnetworkcontrolldiv",
+                    view: "form",
+                    borderless:true,
+                    paddingY: 5,
+                    paddingX: 10,
+                    cols:[
+                        {view: "button", label: "Download image", width: 200, click:function(){webix.html.download(cy.png(), "SalmoNet_{{ .Params.uniprot }}.png")}},
+                        {view: "button", type:"iconButton", icon: "arrows-alt", align:"right", width: 35, click:function(){cy.fit()}},
+                        {view: "button", type:"iconButton", icon: "plus", width: 35, align:"right", click:function(){cy.zoom(cy.zoom()+0.5)}},
+                        {view: "button", type:"iconButton", icon: "minus", width: 35, align:"right", click:function(){cy.zoom(cy.zoom()-0.5)}},
+                    ]
+                });
+                interactionnetworkcontrolldiv.define("width", $("#interactionnetworkcontrolldiv").width());
+                interactionnetworkcontrolldiv.resize();
+                $(window).resize(function() {
+                    interactionnetworkcontrolldiv.define("width", $("#interactionnetworkcontrolldiv").width());
+                    interactionnetworkcontrolldiv.resize();
+                });
             </script>
         </div>
     </div>
