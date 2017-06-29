@@ -83,7 +83,6 @@ $(document).ready(function(){
     });
     cy.elements('edge').qtip({
         content: function(){
-            console.log(this.source().data("id"));
             return this.data("type") +
                 ' interaction between ' +
                 this.source().data("id") +
