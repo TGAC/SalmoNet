@@ -10,7 +10,7 @@ $(document).ready(function(){
             columns: [
                 {id: "data0", header: ["Interactor", {content: "textFilter"}], css: "rank", adjust:true},
                 {id: "data1", header: ["Interactor", {content: "textFilter"}], adjust:true},
-                {id: "data2", header: "Source <a style='color: #1F2421 !important;' href='#legend' class='uk-icon-justify uk-icon-question-circle'></a>", fillspace:true},
+                {id: "data2", header: "Source <a style='color: #1F2421 !important;' class='uk-icon-justify uk-icon-question-circle' href=\"#legendmodal\" data-uk-modal></a>", fillspace:true},
                 {id: "data3", header: ["Layer", {content: "selectFilter"}], adjust:true},
                 {id: "data4", hidden:true},
                 {id: "data5", hidden:true},

@@ -6,8 +6,8 @@ module.exports = function(grunt) {
         // sass: {
 		// 	dist: {
 		// 		files: {
-		// 			'src/css/style.css' : 'src/sass/style.scss'
-         //        }
+		// 			'src/css/uikit_modal.css' : 'node_modules/uikit/dist/scss/core/modal.scss'
+        //         }
 		// 	}
 		// },
         cssmin: {
