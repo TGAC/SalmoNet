@@ -56,8 +56,22 @@ def import_HC_data(node_file, interaction_file):
                 )
             SalmoNet["node"][row[0]]["interactions"].append(icsv)
             SalmoNet["node"][row[1]]["interactions"].append(icsv)
-            SalmoNet["node"][row[0]]["networkjson"].append({"data":{"id":"%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),"source":SalmoNet["node"][row[0]]["name"],"target":SalmoNet["node"][row[1]]["name"]}})
-            SalmoNet["node"][row[1]]["networkjson"].append({"data":{"id":"%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),"source":SalmoNet["node"][row[0]]["name"],"target":SalmoNet["node"][row[1]]["name"]}})
+            SalmoNet["node"][row[0]]["networkjson"].append(
+                { "data": {
+                    "id": "%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),
+                    "source": SalmoNet["node"][row[0]]["name"],
+                    "target": SalmoNet["node"][row[1]]["name"],
+                    "type": row[3],
+                },
+            })
+            SalmoNet["node"][row[1]]["networkjson"].append(
+                { "data": {
+                    "id": "%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),
+                    "source": SalmoNet["node"][row[0]]["name"],
+                    "target": SalmoNet["node"][row[1]]["name"],
+                    "type": row[3],
+                },
+            })
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
         SalmoNet["node"][node]["orthologs"] = SalmoNet["groups"][SalmoNet["node"][node]["group"]]

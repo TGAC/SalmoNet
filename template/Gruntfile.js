@@ -17,7 +17,11 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/css/style.css': ['src/css/*.css', 'node_modules/webix/webix.css']
+                    'dist/css/style.css': [
+                        'src/css/*.css',
+                        'node_modules/webix/webix.css',
+                        'node_modules/qtip2/dist/jquery.qtip.css'
+                    ]
                 }
             }
         },
@@ -33,6 +37,8 @@ module.exports = function(grunt) {
                     'node_modules/webix/webix.js',
                     'node_modules/cytoscape/dist/cytoscape.js',
                     'node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js',
+                    'node_modules/qtip2/dist/jquery.qtip.js',
+                    'node_modules/cytoscape-qtip/cytoscape-qtip.js',
                     'src/js/*.js'
                 ],
                 dest: 'dist/js/app.js'
