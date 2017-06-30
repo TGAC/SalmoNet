@@ -21,7 +21,7 @@
                 <dt>Locus</dt>
                 <dd>{{ .Params.locus }}</dd>
                 <dt>Uniprot Accession</dt>
-                <dd><a href="http://www.uniprot.org/uniprot/{{ .Params.uniprot }}.txt?version=46" target="_blank">{{ .Params.uniprot }}</a></dd>
+                <dd><a id="uniprotac" href="http://www.uniprot.org/uniprot/{{ .Params.uniprot }}.txt?version=46" target="_blank">{{ .Params.uniprot }}</a></dd>
                 <dd><a href="http://www.uniprot.org/uniprot/{{ .Params.uniprot }}.fasta?version=46" target="_blank">Protein sequence</a></dd>
                 <dt>Strain</dt>
                 <dd><i>Salmonella enterica {{ .Params.strain }}</i></dd>
@@ -39,7 +39,7 @@
         <div class="uk-width-medium-1-2">
             <h2>Interactions</h2>
             <div id="interactiontablediv" ></div>
-            <input id="interactiontabledata" type="hidden" name="interactiontabledata" value="{{ .Params.interactioncsv | safeHTML }}">
+            <input id="interactiontabledata" type="hidden" name="interactiontabledata" value="{{ .Params.interactioncsv | safeHTMLAttr }}">
             <p class="uk-text-small">(Download may not work in Safari)</p>
         </div>
         <div class="uk-width-medium-1-2">

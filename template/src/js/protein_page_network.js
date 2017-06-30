@@ -75,7 +75,7 @@ $(document).ready(function(){
         paddingY: 5,
         paddingX: 10,
         cols:[
-            {view: "button", label: "Download image", width: 200, click:function(){webix.html.download(cy.png(), "SalmoNet_{{ .Params.uniprot }}.png")}},
+            {view: "button", label: "Download image", width: 200, click:function(){webix.html.download(cy.png(), "SalmoNet_"+document.getElementById('uniprotac').innerHTML+".png")}},
             {view: "button", type:"iconButton", icon: "arrows-alt", align:"right", width: 35, click:function(){cy.fit()}},
             {view: "button", type:"iconButton", icon: "plus", width: 35, align:"right", click:function(){cy.zoom(cy.zoom()+0.5)}},
             {view: "button", type:"iconButton", icon: "minus", width: 35, align:"right", click:function(){cy.zoom(cy.zoom()-0.5)}},

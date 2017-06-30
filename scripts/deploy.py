@@ -37,7 +37,13 @@ if not os.path.exists(deploy_path):
 subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
 
 # import data
-SalmoNet = import_HC_data(os.path.join(data_path, "HC_nodes.csv"), os.path.join(data_path,"HC_interactions.csv"))
+SalmoNet = import_HC_data(
+    os.path.join(data_path, "HC_nodes.csv"),
+    os.path.join(data_path,"HC_interactions.csv"),
+    os.path.join(data_path,"HC_xref_source.csv"),
+    os.path.join(data_path,"HC_xref_matrix.csv"),
+    os.path.join(data_path,"HC_xref.csv"),
+)
 with open(os.path.join(temp_path, SalmoNetJson), "w") as f:
     json.dump(SalmoNet, f)
 

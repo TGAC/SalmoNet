@@ -19,7 +19,9 @@ $(document).ready(function(){
                 {id: "data8", hidden:true},
                 {id: "data9", hidden:true},
                 {id: "data10", hidden:true},
-                {id: "data11", hidden:true}
+                {id: "data11", hidden:true},
+                {id: "data12", hidden:true},
+                {id: "data13", hidden:true}
             ],
             height: 450,
             autowidth:true,
@@ -37,12 +39,13 @@ $(document).ready(function(){
                 {
                     view: "button", label: "Download table", width: 200, click:function(){
                         webix.toExcel($$("interactiontable"), {
-                            filename: "SalmoNet_{{ .Params.uniprot }}",
+                            filename: "SalmoNet_"+document.getElementById('uniprotac').innerHTML,
                             name: "{{ .Params.genename }}",
                             columns:{
                                 "data0":{header: "node_a_genename"},
                                 "data1":{header: "node_b_genename"},
-                                "data2":{header: "source"},
+                                "data12":{header: "source"},
+                                "data13":{header: "references(pubmedID)"},
                                 "data3":{header: "layer"},
                                 "data4":{header: "node_a_locus"},
                                 "data5":{header: "node_b_locus"},

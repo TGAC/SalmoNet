@@ -4,8 +4,24 @@ import csv
 import json
 import yaml
 
-def import_HC_data(node_file, interaction_file):
+def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_file, xref_i_file):
     SalmoNet = {"node": {}, "interaction": {}, "groups": {}, "strains": []}
+    #lode xrefs
+    xref = {"source": {}, "matrix": {}}
+    with open(xref_source_file) as f:
+        reader = csv.reader(f, delimiter=";")
+        for row in reader:
+            xref["source"][row[0]] = row[2].split(",")
+    with open(xref_matrix_file) as f:
+        reader = csv.reader(f, delimiter=";")
+        for row in reader:
+            for m in row[0].split(","):
+                xref["matrix"][m] = row[1].split(",")
+    with open(xref_i_file) as f:
+        reader = csv.reader(f, delimiter=";")
+        for row in reader:
+            xref["matrix"][";".join(row[0:2])] = row[4].split(",")
+    #load node data
     with open(node_file) as f:
         reader = csv.reader(f, delimiter=";")
         header = next(reader)
@@ -27,23 +43,36 @@ def import_HC_data(node_file, interaction_file):
                 SalmoNet["groups"][row[3]].append(add_group)
             if row[4] not in SalmoNet["strains"]:
                 SalmoNet["strains"].append(row[4])
+    #load interactions
     with open(interaction_file) as f:
         reader = csv.reader(f, delimiter=";")
         header = next(reader)
         for row in reader:
             ref = row[2].replace(",", "").replace("__", "_").split("_")
+            pmids = []
+            for s in xref["source"][row[2]]:
+                if s == "matrix":
+                    pmids.extend( xref["matrix"][SalmoNet["node"][row[0]]["group"]] )
+                elif s == "exp":
+                    pmids.extend( xref["matrix"][";".join(row[0:2])]  )
+                else:
+                    pmids.append(s)
+            pmlink = "https://www.ncbi.nlm.nih.gov/pubmed/?term=" + "+OR+".join([p+"%5Buid%5D" for p in pmids])
+            pmlink = "<a href=\""+pmlink+"\" target=\"_blank\"><i class=\"uk-icon-newspaper-o\"></i></a>"
             SalmoNet["interaction"]["%s-%s"%(row[0],row[1])] = {
                 "source": row[0],
                 "target": row[1],
                 "ref": ref,
                 "layer": row[3],
+                "pmids": ",".join(pmids),
+                "pmlink": pmlink,
             }
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             SalmoNet["node"][row[1]]["num_interaction"] += 1
-            icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
+            icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
                 SalmoNet["node"][row[0]]["name"],
                 SalmoNet["node"][row[1]]["name"],
-                " ".join(ref),
+                " ".join(ref)+"&ensp;"+pmlink,
                 row[3],
                 SalmoNet["node"][row[0]]["locus"],
                 SalmoNet["node"][row[1]]["locus"],
@@ -53,6 +82,8 @@ def import_HC_data(node_file, interaction_file):
                 SalmoNet["node"][row[1]]["group"],
                 "\"%s\""%SalmoNet["node"][row[0]]["strain"],
                 "\"%s\""%SalmoNet["node"][row[1]]["strain"],
+                " ".join(ref),
+                ",".join(pmids),
                 )
             SalmoNet["node"][row[0]]["interactions"].append(icsv)
             SalmoNet["node"][row[1]]["interactions"].append(icsv)
@@ -72,6 +103,7 @@ def import_HC_data(node_file, interaction_file):
                     "type": row[3],
                 },
             })
+
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
         SalmoNet["node"][node]["orthologs"] = SalmoNet["groups"][SalmoNet["node"][node]["group"]]
