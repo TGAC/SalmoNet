@@ -11,8 +11,10 @@ ssh-add travisci_rsa
 rm travisci_rsa
 
 # config git
-git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
+# git config user.name "Travis CI"
+# git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config --global user.email "$COMMIT_AUTHOR_EMAIL"
+git config --global user.name "Travis CI"
 git config push.default tracking
 GITHUB_REPO_URL=`git remote -v | grep -m1 '^origin' | sed -Ene's#.*(https://[^[:space:]]*).*#\1#p'`
 GITHUB_USER=`echo $GITHUB_REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*).git#\1#p'`
