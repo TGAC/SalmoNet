@@ -55,7 +55,7 @@
             <h2>Orthologs of {{ .Params.genename }}</h2>
             <dl class="uk-description-list-horizontal">
                 {{ range $ortholog := .Params.orthologs }}
-                <dt><a href="/protein/{{ $ortholog.uniprot }}.html">{{ $ortholog.uniprot }}</a></dt>
+                <dt><a href="/protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
                 <dd><i>Salmonella enterica {{ $ortholog.stain }}</i></dd>
                 {{ end }}
             </dl>

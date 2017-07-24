@@ -28,7 +28,7 @@ dev_data: clean
 
 hugo_generate: data template
 	cd SalmoNet; \
-		hugo --uglyURLs
+		hugo
 
 prepare_deploy_repo: hugo_generate deploy_config
 	mkdir -p dist
@@ -52,4 +52,4 @@ travis: deploy_github
 
 serve: dev_data template
 	cd SalmoNet; \
-		hugo serve --uglyURLs
+		hugo serve
