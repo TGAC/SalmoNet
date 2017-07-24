@@ -46,7 +46,7 @@ cd ..
 
 # generate static site
 cd SalmoNet
-hugo --uglyURLs
+hugo
 cd ..
 
 # copy site to dist
