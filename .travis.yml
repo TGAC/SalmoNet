@@ -1,6 +1,6 @@
 language: python node_js
 python:
-    - "3.5"
+    - "3.6.1"
 node_js:
     - "node"
 before_install:
@@ -11,5 +11,5 @@ before_install:
     - wget https://github.com/spf13/hugo/releases/download/v0.17/hugo_0.17-64bit.deb
     - sudo dpkg -i hugo_0.17-64bit.deb
 install:
-    - pip3 install -r requirements.txt
+    - pip install -r requirements.txt
 script: /bin/bash deploy.sh
