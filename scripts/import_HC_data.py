@@ -107,6 +107,12 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
         SalmoNet["node"][node]["orthologs"] = SalmoNet["groups"][SalmoNet["node"][node]["group"]]
+    node0interaction = []
+    for node in SalmoNet["node"]:
+        if len(SalmoNet["node"][node]["interactions"]) == 0:
+            node0interaction.append(node)
+    for node in node0interaction:
+        del SalmoNet["node"][node]
     return SalmoNet
 
 
