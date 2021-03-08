@@ -18,7 +18,7 @@
             <script>
     //
     function downloadfn(){
-        var url = "http://cdn.netbiol.org/salmonet2/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
+        var url = "https://cdn.netbiol.org/salmonet2/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
 //        webix.message("download: "+url);
         document.getElementById('downloadframe').src = url;
     }
@@ -63,7 +63,8 @@
                     {id:"cys", value:"Cyoscape" }
             ] },
             { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn},
-            {view: "label", label: "<a href='/download/homolog_groups.csv' class='download_link'>Download ortholog groups details</a>"}
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet2/homolog_groups.csv' class='download_link'>Download ortholog groups details</a>"},
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet/salmonet_v1.zip' class='download_link'>Download the first version of SalmoNet</a>"}
         ]
     });
 
