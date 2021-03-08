@@ -21,6 +21,29 @@ deploy_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","stat
 download_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","static","download"))
 pages_path = os.path.abspath(os.path.join(ROOT_PATH, os.pardir,"SalmoNet","content","protein"))
 
+strains_long_name = {
+    "SALA4": "Salmonella agona (strain SL483)",
+    "SALAR": "Salmonella arizonae (strain ATCC BAA-731 / CDC346-86 / RSK2980)",
+    "SALBC": "Salmonella bongori (strain ATCC 43975 / DSM 13772 / NCTC 12419)",
+    "SALCH": "Salmonella choleraesuis (strain SC-B67)",
+    "SALDC": "Salmonella dublin (strain CT_02021853)",
+    "SALEP": "Salmonella enteritidis PT4 (strain P125109)",
+    "SALG2": "Salmonella gallinarum (strain 287/91 / NCTC 13346)",
+    "SALHS": "Salmonella heidelberg (strain SL476)",
+    "SALNS": "Salmonella newport (strain SL254)",
+    "SALPK": "Salmonella paratyphi A (strain AKU_12601)",
+    "SALPA": "Salmonella paratyphi A (strain ATCC 9150 / SARB42)",
+    "SALPB": "Salmonella paratyphi B (strain ATCC BAA-1250 / SPB7)",
+    "SALPC": "Salmonella paratyphi C (strain RKS4594)",
+    "SALSV": "Salmonella schwarzengrund (strain CVM19633)",
+    "SALTI": "Salmonella typhi",
+    "SALT1": "Salmonella typhimurium (strain 14028s / SGSC 2262)",
+    "SALT4": "Salmonella typhimurium (strain 4/74)",
+    "SALTD": "Salmonella typhimurium (strain D23580)",
+    "SALTY": "Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)",
+    "SALTS": "Salmonella typhimurium (strain SL1344)",
+}
+
 # make dirs
 if not os.path.exists(temp_path):
     os.makedirs(temp_path)
@@ -38,11 +61,11 @@ subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
 
 # import data
 SalmoNet = import_HC_data(
-    os.path.join(data_path, "HC_nodes.csv"),
-    os.path.join(data_path,"HC_interactions.csv"),
-    os.path.join(data_path,"HC_xref_source.csv"),
-    os.path.join(data_path,"HC_xref_matrix.csv"),
-    os.path.join(data_path,"HC_xref.csv"),
+    os.path.join(data_path, "HC_nodes_new.csv"),
+    os.path.join(data_path, "HC_interactions_new.csv"),
+    os.path.join(data_path, "HC_xref_source_new.csv"),
+    os.path.join(data_path, "HC_xref_matrix_new.csv"),
+    os.path.join(data_path, "HC_xref_new.csv"),
 )
 with open(os.path.join(temp_path, SalmoNetJson), "w") as f:
     json.dump(SalmoNet, f)
@@ -55,7 +78,7 @@ with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
 # export strain select
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
-    export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"))
+    export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"), strains_long_name)
 
 # clear protein pages
 subprocess.call(["rm","-rf", pages_path+"/*"], stdout=subprocess.PIPE)

@@ -20,9 +20,9 @@
                 <dd>{{ .Params.genename }}</dd>
                 <dt>Locus</dt>
                 <dd>{{ .Params.locus }}</dd>
-                <dt>Uniprot Accession</dt>
-                <dd><a id="uniprotac" href="http://www.uniprot.org/uniprot/{{ .Params.uniprot }}.txt?version=46" target="_blank">{{ .Params.uniprot }}</a></dd>
-                <dd><a href="http://www.uniprot.org/uniprot/{{ .Params.uniprot }}.fasta?version=46" target="_blank">Protein sequence</a></dd>
+                <dt>OMA Identifier</dt>
+                <dd><a id="uniprot" href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}" target="_blank">{{ .Params.uniprot }}</a></dd>
+                <dd><a href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}/fasta" target="_blank">Protein sequence</a></dd>
                 <dt>Strain</dt>
                 <dd><i>Salmonella enterica {{ .Params.strain }}</i></dd>
             </dl>

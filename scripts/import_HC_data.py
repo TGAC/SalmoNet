@@ -48,13 +48,21 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
         reader = csv.reader(f, delimiter=";")
         header = next(reader)
         for row in reader:
+
+            if row[0] == "NULL" or row[1] == "NULL":
+                continue
+
             ref = row[2].replace(",", "").replace("__", "_").split("_")
             pmids = []
             for s in xref["source"][row[2]]:
                 if s == "matrix":
-                    pmids.extend( xref["matrix"][SalmoNet["node"][row[0]]["group"]] )
+                    if SalmoNet["node"][row[0]]["group"] not in xref["matrix"]:
+                        xref["matrix"][SalmoNet["node"][row[0]]["group"]] = "based on orthology"
+                    pmids.extend(xref["matrix"][SalmoNet["node"][row[0]]["group"]])
                 elif s == "exp":
-                    pmids.extend( xref["matrix"][";".join(row[0:2])]  )
+                    if ";".join(row[0:2]) not in xref["matrix"]:
+                        xref["matrix"][";".join(row[0:2])] = "based on orthology"
+                    pmids.extend(xref["matrix"][";".join(row[0:2])])
                 else:
                     pmids.append(s)
             pmlink = "https://www.ncbi.nlm.nih.gov/pubmed/?term=" + "+OR+".join([p+"%5Buid%5D" for p in pmids])
@@ -116,11 +124,11 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
     return SalmoNet
 
 
-def export_strain_select_json(SalmoNet, out_file):
+def export_strain_select_json(SalmoNet, out_file, strains_long_name):
     select = []
     select.append({"value": "Select a strain", "id": 0})
     for id, strain in enumerate(SalmoNet["strains"]):
-        select.append({"id": id+1, "value": strain})
+        select.append({"id": id+1, "value": strains_long_name[strain]})
     with open(out_file, "w") as f:
         json.dump(select, f)
 
