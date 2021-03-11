@@ -45,6 +45,7 @@ strains_long_name = {
 }
 
 # make dirs
+print("make dirs")
 if not os.path.exists(temp_path):
     os.makedirs(temp_path)
 if not os.path.exists(pages_path):
@@ -57,9 +58,11 @@ if not os.path.exists(deploy_path):
 	os.makedirs(deploy_path)
 
 # clear temp
+print("clear temp")
 subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
 
 # import data
+print("import data")
 SalmoNet = import_HC_data(
     os.path.join(data_path, "HC_nodes_new.csv"),
     os.path.join(data_path, "HC_interactions_new.csv"),
@@ -71,24 +74,29 @@ with open(os.path.join(temp_path, SalmoNetJson), "w") as f:
     json.dump(SalmoNet, f)
 
 # export strain nodes
+print("export strain nodes")
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
     export_strain_node_lists(SalmoNet, temp_path)
 
 # export strain select
+print("export strain select")
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
     export_strain_select_json(SalmoNet, os.path.join(temp_path, "strain_select.json"), strains_long_name)
 
 # clear protein pages
+print("clear protein pages")
 subprocess.call(["rm","-rf", pages_path+"/*"], stdout=subprocess.PIPE)
 
 # export protein pages
+print("export protein pages")
 with open(os.path.join(temp_path, SalmoNetJson)) as data_file:
     SalmoNet = json.load(data_file)
     export_protein_data(SalmoNet, pages_path, DEV)
 
 # copy deploy
+print("copy deploy")
 for src_file in os.listdir(temp_path):
 	if src_file == "SalmoNet.json":
 		continue

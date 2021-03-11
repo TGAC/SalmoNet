@@ -29,20 +29,21 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
             SalmoNet["node"][row[0]] = {
                 "name": row[1],
                 "locus": row[2].replace(",", ";"),
-                "group": row[3],
-                "strain": row[4],
+                "old_locus": row[3].replace(",", ";"),
+                "group": row[4],
+                "strain": row[5],
                 "num_ortholog": 0,
                 "num_interaction": 0,
                 "interactions": [],
                 "networkjson": [],
             }
-            if row[3] not in SalmoNet["groups"]:
-                SalmoNet["groups"][row[3]] = []
-            add_group = {"stain": row[4], "uniprot": row[0]}
-            if add_group not in SalmoNet["groups"][row[3]]:
-                SalmoNet["groups"][row[3]].append(add_group)
-            if row[4] not in SalmoNet["strains"]:
-                SalmoNet["strains"].append(row[4])
+            if row[4] not in SalmoNet["groups"]:
+                SalmoNet["groups"][row[4]] = []
+            add_group = {"stain": row[5], "uniprot": row[0]}
+            if add_group not in SalmoNet["groups"][row[4]]:
+                SalmoNet["groups"][row[4]].append(add_group)
+            if row[5] not in SalmoNet["strains"]:
+                SalmoNet["strains"].append(row[5])
     #load interactions
     with open(interaction_file) as f:
         reader = csv.reader(f, delimiter=";")
@@ -138,11 +139,12 @@ def export_strain_node_lists(SalmoNet, files_prefix):
         with open("%s/nodes%s.csv" % (files_prefix, id+1), "w") as f:
             for nid, node in enumerate(SalmoNet["node"]):
                 if SalmoNet["node"][node]["strain"] == strain:
-                    f.write("%s,%s,%s,%s,%s,%s\n" % (
+                    f.write("%s,%s,%s,%s,%s,%s,%s\n" % (
                         nid,
                         node,
                         SalmoNet["node"][node]["name"],
                         SalmoNet["node"][node]["locus"],
+                        SalmoNet["node"][node]["old_locus"],
                         SalmoNet["node"][node]["num_ortholog"],
                         SalmoNet["node"][node]["num_interaction"],
                     ))
