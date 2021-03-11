@@ -12,10 +12,43 @@
     </div>
 
     <hr class="uk-grid-divider">
+    
+    <script>
+
+    var dict = {
+        "SALA4": "Salmonella enterica subsp. enterica serovar Agona str. SL483",
+        "SALAR": "Salmonella enterica subsp. arizonae serovar 62:z4,z23",
+        "SALBC": "Salmonella bongori NCTC 12419",
+        "SALCH": "Salmonella enterica subsp. enterica serovar Choleraesuis str. SC-B67",
+        "SALDC": "Salmonella enterica subsp. enterica serovar Dublin str. CT_02021853",
+        "SALEP": "Salmonella enterica subsp. enterica serovar Enteritidis str. P125109",
+        "SALG2": "Salmonella enterica subsp. enterica serovar Gallinarum str. 287/91",
+        "SALHS": "Salmonella enterica subsp. enterica serovar Heidelberg str. SL476",
+        "SALNS": "Salmonella enterica subsp. enterica serovar Newport str. SL254",
+        "SALPK": "Salmonella enterica subsp. enterica serovar Paratyphi A str. AKU_12601",
+        "SALPA": "Salmonella enterica subsp. enterica serovar Paratyphi A str. ATCC 9150",
+        "SALPB": "Salmonella enterica subsp. enterica serovar Paratyphi B str. SPB7",
+        "SALPC": "Salmonella enterica subsp. enterica serovar Paratyphi C str. RKS4594",
+        "SALSV": "Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633",
+        "SALTI": "Salmonella enterica subsp. enterica serovar Typhi str. CT18",
+        "SALT1": "Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S",
+        "SALT4": "SalmSalmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
+        "SALTD": "Salmonella enterica subsp. enterica serovar Typhimurium str. D23580",
+        "SALTY": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2",
+        "SALTS": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344",
+    };
+
+    window.onload = function() {
+        var actual_strain = dict['{{ .Params.strain }}'];
+
+        document.getElementById('strain_original').innerHTML = actual_strain;
+    }
+
+    </script>
 
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
-            <dl class="uk-description-list-horizontal">
+            <dl class="uk-description-list-horizontal" style="width: 200%;">
                 <dt>Name</dt>
                 <dd>{{ .Params.genename }}</dd>
                 <dt>Locus</dt>
@@ -24,7 +57,7 @@
                 <dd><a id="uniprot" href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}" target="_blank">{{ .Params.uniprot }}</a></dd>
                 <dd><a href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}/fasta" target="_blank">Protein sequence</a></dd>
                 <dt>Strain</dt>
-                <dd><i>Salmonella enterica {{ .Params.strain }}</i></dd>
+                <dd><i><p id="strain_original"></p></i></dd>
             </dl>
         </div>
         <div class="uk-width-medium-1-2">
@@ -53,10 +86,13 @@
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
             <h2>Orthologs of {{ .Params.genename }}</h2>
-            <dl class="uk-description-list-horizontal">
+            <dl class="uk-description-list-horizontal" style="width: 200%;">
                 {{ range $ortholog := .Params.orthologs }}
                 <dt><a href="/protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
-                <dd><i>Salmonella enterica {{ $ortholog.stain }}</i></dd>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['{{ $ortholog.stain }}'];
+                </script>
                 {{ end }}
             </dl>
         </div>

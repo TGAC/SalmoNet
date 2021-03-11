@@ -55,6 +55,9 @@ cd ..
 
 # copy site to dist
 echo " 4/5 - copy site to dist"
+cd scripts
+python3 _change_ortholog_ids.py
+cd ..
 rm -rf SalmoNet/public/download/*.csv
 rm -rf SalmoNet/public/download/*.cys
 cp -r SalmoNet/public/* dist
