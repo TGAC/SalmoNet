@@ -58,16 +58,20 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
             for s in xref["source"][row[2]]:
                 if s == "matrix":
                     if SalmoNet["node"][row[0]]["group"] not in xref["matrix"]:
-                        xref["matrix"][SalmoNet["node"][row[0]]["group"]] = "based on orthology"
-                    pmids.extend(xref["matrix"][SalmoNet["node"][row[0]]["group"]])
+                        xref_based_on_orthology_matrix = "based on orthology"
+                    pmids.append(xref_based_on_orthology_matrix)
                 elif s == "exp":
                     if ";".join(row[0:2]) not in xref["matrix"]:
-                        xref["matrix"][";".join(row[0:2])] = "based on orthology"
-                    pmids.extend(xref["matrix"][";".join(row[0:2])])
+                        xref_based_on_orthology_exp = "based on orthology"
+                    pmids.append(xref_based_on_orthology_exp)
                 else:
                     pmids.append(s)
+
             pmlink = "https://www.ncbi.nlm.nih.gov/pubmed/?term=" + "+OR+".join([p+"%5Buid%5D" for p in pmids])
             pmlink = "<a href=\""+pmlink+"\" target=\"_blank\"><i class=\"uk-icon-newspaper-o\"></i></a>"
+            if "based on orthology" in pmlink:
+                pmlink = "<a href='https://korcsmarosgroup.github.io/SalmoNet2/protein/' target='_blank'><i class='uk-icon-newspaper-o'></i></a>"
+                
             SalmoNet["interaction"]["%s-%s"%(row[0],row[1])] = {
                 "source": row[0],
                 "target": row[1],
@@ -77,7 +81,8 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                 "pmlink": pmlink,
             }
             SalmoNet["node"][row[0]]["num_interaction"] += 1
-            SalmoNet["node"][row[1]]["num_interaction"] += 1
+            if SalmoNet["node"][row[0]] != SalmoNet["node"][row[1]]:
+                SalmoNet["node"][row[1]]["num_interaction"] += 1
             icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
                 SalmoNet["node"][row[0]]["name"],
                 SalmoNet["node"][row[1]]["name"],
@@ -95,7 +100,8 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                 ",".join(pmids),
                 )
             SalmoNet["node"][row[0]]["interactions"].append(icsv)
-            SalmoNet["node"][row[1]]["interactions"].append(icsv)
+            if SalmoNet["node"][row[0]] != SalmoNet["node"][row[1]]:
+                SalmoNet["node"][row[1]]["interactions"].append(icsv)
             SalmoNet["node"][row[0]]["networkjson"].append(
                 { "data": {
                     "id": "%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),
@@ -104,14 +110,15 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                     "type": row[3],
                 },
             })
-            SalmoNet["node"][row[1]]["networkjson"].append(
-                { "data": {
-                    "id": "%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),
-                    "source": SalmoNet["node"][row[0]]["name"],
-                    "target": SalmoNet["node"][row[1]]["name"],
-                    "type": row[3],
-                },
-            })
+            if SalmoNet["node"][row[0]] != SalmoNet["node"][row[1]]:
+                SalmoNet["node"][row[1]]["networkjson"].append(
+                    { "data": {
+                        "id": "%s_%s"%(SalmoNet["node"][row[0]]["name"],SalmoNet["node"][row[1]]["name"]),
+                        "source": SalmoNet["node"][row[0]]["name"],
+                        "target": SalmoNet["node"][row[1]]["name"],
+                        "type": row[3],
+                    },
+                })
 
     for node in SalmoNet["node"]:
         SalmoNet["node"][node]["num_ortholog"] = len(SalmoNet["groups"][SalmoNet["node"][node]["group"]])
@@ -159,14 +166,15 @@ def export_protein_data(SalmoNet, path, just_one=False):
             md_data["title"] = uniprot
             md_data["description"] = uniprot
             md_data["date"] = "2016-07-01"
-            #
+            
             md_data["genename"] = SalmoNet["node"][uniprot]["name"]
+            md_data["old_locus"] = SalmoNet["node"][uniprot]["old_locus"]
             md_data["locus"] = SalmoNet["node"][uniprot]["locus"]
             md_data["strain"] = SalmoNet["node"][uniprot]["strain"]
             md_data["orthologs"] = SalmoNet["node"][uniprot]["orthologs"]
             md_data["uniprot"] = uniprot
             md_data["interactioncsv"] = "\n".join(SalmoNet["node"][uniprot]["interactions"])
-            #
+            
             networkjsonnodes = {}
             for n in SalmoNet["node"][uniprot]["networkjson"]:
                 if n["data"]["source"] not in networkjsonnodes:

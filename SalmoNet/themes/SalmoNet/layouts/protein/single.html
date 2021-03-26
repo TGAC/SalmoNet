@@ -49,9 +49,11 @@
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
             <dl class="uk-description-list-horizontal" style="width: 200%;">
-                <dt>Name</dt>
+                <dt>Gene name/Locus tag (old)</dt>
                 <dd>{{ .Params.genename }}</dd>
-                <dt>Locus</dt>
+                <dt>Locus tag (old)</dt>
+                <dd>{{ .Params.old_locus }}</dd>
+                <dt>Locus tag (new)</dt>
                 <dd>{{ .Params.locus }}</dd>
                 <dt>OMA Identifier</dt>
                 <dd><a id="uniprot" href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}" target="_blank">{{ .Params.uniprot }}</a></dd>
@@ -88,7 +90,7 @@
             <h2>Orthologs of {{ .Params.genename }}</h2>
             <dl class="uk-description-list-horizontal" style="width: 200%;">
                 {{ range $ortholog := .Params.orthologs }}
-                <dt><a href="/protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
+                <dt><a href="https://korcsmarosgroup.github.io/SalmoNet2/protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
                 <dd><i><p id="actual_ortholog_strain"></p></i></dd>
                 <script>
                     document.getElementById("actual_ortholog_strain").innerHTML = dict['{{ $ortholog.stain }}'];
@@ -102,7 +104,7 @@
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-1">
             <a name="legend"></a> -->
-    <div id="legendmodal" class="uk-modal">
+    <div id="legendmodal" class="uk-modal" name="help_table">
         <div class="uk-modal-dialog">
             <a class="uk-modal-close uk-close"></a>
             <div class="uk-modal-header">Legend for interactions table</div>
