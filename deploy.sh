@@ -33,13 +33,13 @@ set -e
 
 # process data
 echo " 1/5 - process data"
-rm -rf dist/
 cd scripts
 python3 deploy.py
 cd ..
 
 # prepare deploy repo
 echo " 2/5 - prepare deploy repo"
+rm -rf dist/
 mkdir -p dist
 git clone git@github.com:korcsmarosgroup/SalmoNet2.git dist
 cd dist

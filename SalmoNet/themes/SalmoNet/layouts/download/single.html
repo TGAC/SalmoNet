@@ -18,6 +18,11 @@
             <script>
     //
     function downloadfn(){
+
+        if (downloadform.getValues().strain == "SalmoNet_Consensus") {
+            alert("You will download one of the Consensus file. Please make sure to download the ortholog groups details csv file as well for interpreting the Consensus file!")
+        }
+
         var url = "https://cdn.netbiol.org/salmonet2/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
 //        webix.message("download: "+url);
         document.getElementById('downloadframe').src = url;
@@ -60,7 +65,7 @@
             ] },
             { view:"select", label:"Format", name: "format", options:[
                     {id:"csv", value:"CSV" },
-                    {id:"cys", value:"Cyoscape" }
+                    {id:"cys", value:"Cytoscape" }
             ] },
             { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn},
             {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet2/ortholog_groups_details.csv' class='download_link'>Download ortholog groups details</a>"},
