@@ -41,7 +41,7 @@ cd ..
 echo " 2/5 - prepare deploy repo"
 rm -rf dist/
 mkdir -p dist
-git clone git@github.com:korcsmarosgroup/SalmoNet2.git dist
+git clone git@github.com:TGAC/SalmoNet.git dist
 cd dist
 git checkout gh-pages
 git rm -rf *
