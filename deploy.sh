@@ -67,9 +67,9 @@ cp -r SalmoNet/public/* dist
 # deploy
 echo " 5/5 - deploy"
 cd dist
-git add --all
-git commit -am "automatic deploy"
-git push origin gh-pages
+git add --all > /dev/null 2>&1
+git commit -am "automatic deploy" > /dev/null 2>&1
+git push origin gh-pages > /dev/null 2>&1
 cd ..
 
 #remove deploy key
