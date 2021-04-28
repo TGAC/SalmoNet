@@ -18,7 +18,12 @@
             <script>
     //
     function downloadfn(){
-        var url = "/download/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
+
+        if (downloadform.getValues().strain == "SalmoNet_Consensus") {
+            alert("You will download one of the Consensus file. Please make sure to download the ortholog groups details csv file as well for interpreting the Consensus file!")
+        }
+
+        var url = "https://cdn.netbiol.org/salmonet2/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
 //        webix.message("download: "+url);
         document.getElementById('downloadframe').src = url;
     }
@@ -31,17 +36,26 @@
         elements: [
             { view:"select", label:"Strain", name: "strain", options:[
                     {id:"SalmoNet_Consensus", value:"Consensus" },
-                    {id:"Salmonella_enterica_serovar_Agona_SL483", value:"Salmonella enterica serovar Agona SL483" },
-                    {id:"Salmonella_enterica_serovar_Choleraesuis_SC-B67", value:"Salmonella enterica serovar Choleraesuis SC-B67"},
-                    {id:"Salmonella_enterica_serovar_Dublin_CT_02021853", value:"Salmonella enterica serovar Dublin_CT 02021853" },
-                    {id:"Salmonella_enterica_serovar_Enteritidis_P125109", value:"Salmonella enterica serovar Enteritidis P125109" },
-                    {id:"Salmonella_enterica_serovar_Gallinarum_287_91", value:"Salmonella enterica serovar Gallinarum 287 91" },
-                    {id:"Salmonella_enterica_serovar_Heidelberg_SL476", value:"Salmonella enterica serovar Heidelberg SL476" },
-                    {id:"Salmonella_enterica_serovar_Newport_SL254", value:"Salmonella enterica serovar Newport SL254" },
-                    {id:"Salmonella_enterica_serovar_Paratyphi_A_ATCC_9150", value:"Salmonella enterica serovar Paratyphi A ATCC 9150" },
-                    {id:"Salmonella_enterica_serovar_Typhi_strain_CT18", value:"Salmonella enterica serovar Typhi strain CT18" },
-                    {id:"Salmonella_enterica_serovar_Typhimurium_LT2", value:"Salmonella enterica serovar Typhimurium LT2" },
-                    {id:"Salmonella_enterica_serovar_Typhimurium_SL1344", value:"Salmonella enterica serovar Typhimurium SL1344" }
+                    {id:"Salmonella_agona_SL483", value:"Salmonella agona (strain SL483)" },
+                    {id:"Salmonella_arizonae_ATCC_BAA-731_CDC346-86_RSK2980", value:"Salmonella arizonae (strain ATCC BAA-731 / CDC346-86 / RSK2980)"},
+                    {id:"Salmonella_bongori_ATCC_43975_DSM_13772_NCTC_12419", value:"Salmonella bongori (strain ATCC 43975 / DSM 13772 / NCTC 12419)" },
+                    {id:"Salmonella_choleraesuis_SC-B67", value:"Salmonella choleraesuis (strain SC-B67)" },
+                    {id:"Salmonella_dublin_CT_02021853", value:"Salmonella dublin (strain CT_02021853)" },
+                    {id:"Salmonella_enteritidis_PT4_P125109", value:"Salmonella enteritidis PT4 (strain P125109)" },
+                    {id:"Salmonella_gallinarum_287_91_NCTC_13346", value:"Salmonella gallinarum (strain 287/91 / NCTC 13346)" },
+                    {id:"Salmonella_heidelberg_SL476", value:"Salmonella heidelberg (strain SL476)" },
+                    {id:"Salmonella_newport_SL254", value:"Salmonella newport (strain SL254)" },
+                    {id:"Salmonella_paratyphi_A_AKU_12601", value:"Salmonella paratyphi A (strain AKU_12601)" },
+                    {id:"Salmonella_paratyphi_A_ATCC_9150_SARB42", value:"Salmonella paratyphi A (strain ATCC 9150 / SARB42)" },
+                    {id:"Salmonella_paratyphi_B_ATCC_BAA-1250_SPB7", value:"Salmonella paratyphi B (strain ATCC BAA-1250 / SPB7)" },
+                    {id:"Salmonella_paratyphi_C_RKS4594", value:"Salmonella paratyphi C (strain RKS4594)" },
+                    {id:"Salmonella_schwarzengrund_CVM19633", value:"Salmonella schwarzengrund (strain CVM19633)" },
+                    {id:"Salmonella_typhi", value:"Salmonella typhi" },
+                    {id:"Salmonella_typhimurium_14028s_SGSC_2262", value:"Salmonella typhimurium (strain 14028s / SGSC 2262)" },
+                    {id:"Salmonella_typhimurium_4_74", value:"Salmonella typhimurium (strain 4/74)" },
+                    {id:"Salmonella_typhimurium_D23580", value:"Salmonella typhimurium (strain D23580)" },
+                    {id:"Salmonella_typhimurium_LT2_SGSC1412_ATCC_700720", value:"Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)" },
+                    {id:"Salmonella_typhimurium_SL1344", value:"Salmonella typhimurium (strain SL1344)" },
             ] },
             { view:"select", label:"Layer", name: "layer", options:[
                     {id:"allnetworks", value:"All" },
@@ -51,10 +65,12 @@
             ] },
             { view:"select", label:"Format", name: "format", options:[
                     {id:"csv", value:"CSV" },
-                    {id:"cys", value:"Cyoscape" }
+                    {id:"psimitab", value:"PSI-MITAB" },
+                    {id:"cys", value:"Cytoscape" }
             ] },
             { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn},
-            {view: "label", label: "<a href='/download/homolog_groups.csv' class='download_link'>Download ortholog groups details</a>"}
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet2/ortholog_groups_details.csv' class='download_link'>Download ortholog groups details</a>"},
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet/salmonet_v1.zip' class='download_link'>Download the first version of SalmoNet</a>"}
         ]
     });
 
