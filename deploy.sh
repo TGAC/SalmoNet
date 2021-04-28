@@ -62,7 +62,7 @@ cd ..
 rm -rf SalmoNet/public/download/*.csv
 rm -rf SalmoNet/public/download/*.cys
 cp -r SalmoNet/public/* dist
-# echo "salmonet.org" > dist/CNAME
+echo "salmonet.org" > dist/CNAME
 
 # deploy
 echo " 5/5 - deploy"
