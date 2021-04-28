@@ -4,7 +4,8 @@
 set -e
 
 # decrypt deploy key
-openssl aes-256-cbc -K $encrypted_56a395b73f83_key -iv $encrypted_56a395b73f83_iv -in travisci_rsa.enc -out travisci_rsa -d
+#openssl aes-256-cbc -K $encrypted_56a395b73f83_key -iv $encrypted_56a395b73f83_iv -in travisci_rsa.enc -out travisci_rsa -d
+openssl aes-256-cbc -K $encrypted_9d19862b4d4b_key -iv $encrypted_9d19862b4d4b_iv -in travisci_rsa.enc -out travisci_rsa -d
 chmod 600 travisci_rsa
 eval `ssh-agent -s`
 ssh-add travisci_rsa
