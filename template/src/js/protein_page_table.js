@@ -39,7 +39,7 @@ $(document).ready(function(){
                 {
                     view: "button", label: "Download table", width: 200, click:function(){
                         webix.toExcel($$("interactiontable"), {
-                            filename: "SalmoNet_"+document.getElementById('uniprotac').innerHTML,
+                            filename: "SalmoNet_"+document.getElementById('uniprot').innerHTML,
                             name: "{{ .Params.genename }}",
                             columns:{
                                 "data0":{header: "node_a_genename"},
