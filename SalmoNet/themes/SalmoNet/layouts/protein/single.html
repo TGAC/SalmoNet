@@ -90,7 +90,7 @@
             <h2>Orthologs of {{ .Params.genename }}</h2>
             <dl class="uk-description-list-horizontal" style="width: 200%;">
                 {{ range $ortholog := .Params.orthologs }}
-                <dt><a href="{{ .Site.BaseURL }}protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
+                <dt><a href="http://salmonet.org/protein/{{ lower $ortholog.uniprot }}/">{{ $ortholog.uniprot }}</a></dt>
                 <dd><i><p id="actual_ortholog_strain"></p></i></dd>
                 <script>
                     document.getElementById("actual_ortholog_strain").innerHTML = dict['{{ $ortholog.stain }}'];
