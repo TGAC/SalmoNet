@@ -70,8 +70,7 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
             pmlink = "https://www.ncbi.nlm.nih.gov/pubmed/?term=" + "+OR+".join([p+"%5Buid%5D" for p in pmids])
             pmlink = "<a href=\""+pmlink+"\" target=\"_blank\"><i class=\"uk-icon-newspaper-o\"></i></a>"
             if "based on orthology" in pmlink:
-                pmlink = "<a href='#legendmodal'><i class='uk-icon-newspaper-o'></i></a>"
-                print(ref)
+                pmlink = "<a style=\"color: #1F2421 !important;\" class=\"uk-icon-justify uk-icon-question-circle\" href=\"#legendmodal\" data-uk-modal></a>"
             
             SalmoNet["interaction"]["%s-%s"%(row[0],row[1])] = {
                 "source": row[0],
