@@ -70,8 +70,9 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
             pmlink = "https://www.ncbi.nlm.nih.gov/pubmed/?term=" + "+OR+".join([p+"%5Buid%5D" for p in pmids])
             pmlink = "<a href=\""+pmlink+"\" target=\"_blank\"><i class=\"uk-icon-newspaper-o\"></i></a>"
             if "based on orthology" in pmlink:
-                pmlink = "<a href='https://korcsmarosgroup.github.io/SalmoNet2/protein/' target='_blank'><i class='uk-icon-newspaper-o'></i></a>"
-                
+                pmlink = "<a href='#legendmodal'><i class='uk-icon-newspaper-o'></i></a>"
+                print(ref)
+            
             SalmoNet["interaction"]["%s-%s"%(row[0],row[1])] = {
                 "source": row[0],
                 "target": row[1],
@@ -80,6 +81,7 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                 "pmids": ",".join(pmids),
                 "pmlink": pmlink,
             }
+            
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             if SalmoNet["node"][row[0]] != SalmoNet["node"][row[1]]:
                 SalmoNet["node"][row[1]]["num_interaction"] += 1
