@@ -5,11 +5,12 @@ $(function () {
         view: "datatable",
         css:"salmonet_table protein_link",
         columns: [
-            {id: "uniprot", map: "#data1#", header: ["UniProt AC", {content: "textFilter"}], width: 150},
-            {id: "genename", map: "#data2#", header: ["Gene name", {content: "textFilter"}], width: 250},
-            {id: "locus", map: "#data3#", header: ["Locus", {content: "textFilter"}], width: 250},
-            {id: "numort", map: "#data4#", header: ["Number of","Homologs"], width: 150},
-            {id: "numint", map: "#data5#", header: ["Number of","Interactions"], width: 150}
+            {id: "uniprot", map: "#data1#", header: ["OMA identifier", {content: "textFilter"}], width: 150},
+            {id: "genename", map: "#data2#", header: ["Gene name/Locus tag (old)", {content: "textFilter"}], width: 250},
+            {id: "locus_pld", map: "#data4#", header: ["Locus tag (old)", {content: "textFilter"}], width: 250},
+            {id: "locus", map: "#data3#", header: ["Locus tag (new)", {content: "textFilter"}], width: 250},
+            {id: "numort", map: "#data5#", header: ["Number of","Homologs"], width: 150},
+            {id: "numint", map: "#data6#", header: ["Number of","Interactions"], width: 150}
         ],
         resizeColumn: true,
         datatype: "csv",
