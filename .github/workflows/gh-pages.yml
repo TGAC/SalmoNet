@@ -46,6 +46,10 @@ jobs:
           hugo
           cd ..
 
+      - name: add cname
+        run: |
+          echo "salmonet.org" >> ./SalmoNet/public/CNAME
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
