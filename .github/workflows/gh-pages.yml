@@ -1,0 +1,55 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+      
+      - uses: bahmutov/npm-install@v1
+      
+      - name: generate template
+        run: |
+          cd template
+          npm install
+          grunt build
+          cp dist/js/app.js ../SalmoNet/themes/SalmoNet/static/js/app.js
+          cp dist/css/style.css ../SalmoNet/themes/SalmoNet/static/css/style.css
+          cp node_modules/uikit/dist/fonts/* ../SalmoNet/themes/SalmoNet/static/css/fonts/
+          cd ..
+
+      - name: process data
+        run: |
+          cd scripts
+          python3 deploy.py
+          cd ..
+
+      - name: Build template
+        run: |
+          cd scripts
+          python3 deploy.py
+          cd ..
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
+
+      # - name: Build
+      #   run: hugo --minify
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: github.ref == 'refs/heads/main'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
