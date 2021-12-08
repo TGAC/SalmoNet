@@ -34,24 +34,21 @@ jobs:
           python3 deploy.py
           cd ..
 
-      - name: Build template
-        run: |
-          cd scripts
-          python3 deploy.py
-          cd ..
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: 'v0.25.1'
           # extended: true
 
-      # - name: Build
-      #   run: hugo --minify
+      - name: generate static site
+        run: |
+          cd SalmoNet
+          hugo
+          cd ..
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
-      #   if: github.ref == 'refs/heads/main'
+      #   if: github.ref == 'refs/heads/master'
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
       #     publish_dir: ./public
