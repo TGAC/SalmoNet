@@ -198,7 +198,6 @@ def export_protein_data(SalmoNet, path, just_one=False):
                 else:
                     SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"oma":real_oma_id,"main": False}})
             md_data["networkjson"] = json.dumps(SalmoNet["node"][uniprot]["networkjson"])
-            print(md_data["networkjson"])
             #
             md = yaml.dump(md_data, allow_unicode=True,
                       default_flow_style=False,
