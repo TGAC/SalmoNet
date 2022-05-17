@@ -5,7 +5,7 @@ function onCytoscapeElementClicked(event) {
     var currentTime = new Date().getTime();
     if(currentTime - lastClickTimeMs < 500) {
       //console.log("cytoscape double-click event:" + event.cyTarget.id())
-      myFunction(event.cyTarget["oma"]);
+      myFunction(event.cyTarget.id("oma"));
     }
     lastClickTimeMs = currentTime;
 }
