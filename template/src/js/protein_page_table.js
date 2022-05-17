@@ -13,7 +13,7 @@ $(document).ready(function(){
                 {id: "data2", header: "Source <a style='color: #1F2421 !important;' class='uk-icon-justify uk-icon-question-circle' href=\"#legendmodal\" data-uk-modal></a>", fillspace:true},
                 {id: "data3", header: ["Layer", {content: "selectFilter"}], adjust:true},
                 {id: "data4", header: "MI-score", fillspace:true},
-                {id: "data5", header: "Interaction detection methods", fillspace:true},
+                {id: "data5", header: "Det. met.", fillspace:true},
                 {id: "data6", hidden:true},
                 {id: "data7", hidden:true},
                 {id: "data8", hidden:true},
@@ -21,10 +21,12 @@ $(document).ready(function(){
                 {id: "data10", hidden:true},
                 {id: "data11", hidden:true},
                 {id: "data12", hidden:true},
-                {id: "data13", hidden:true}
+                {id: "data13", hidden:true},
+                {id: "data14", hidden:true},
+                {id: "data15", hidden:true}
             ],
             height: 450,
-            autowidth:true,
+            autowidth: 570,
             datatype: "csv",
             data: document.getElementById('interactiontabledata').value
             // data: '{{ .Params.interactioncsv | safeHTML }}'
@@ -34,7 +36,7 @@ $(document).ready(function(){
             css: "toolbar",
             paddingY: 5,
             paddingX: 10,
-            autowidth:true,
+            autowidth: 570,
             cols:[
                 {
                     view: "button", label: "Download table", width: 200, click:function(){

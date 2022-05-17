@@ -1,8 +1,11 @@
+function myFunction(page) {
+    location.replace("http://salmonet.org/protein/"+page)
+  }
 function onCytoscapeElementClicked(event) {
     var currentTime = new Date().getTime();
     if(currentTime - lastClickTimeMs < 500) {
-      console.log("cytoscape double-click event:" + event.cyTarget.id())
-      ("{{ .Site.BaseURL }}/protein/"+event.cyTarget.id());
+      //console.log("cytoscape double-click event:" + event.cyTarget.id())
+      myFunction(event.cyTarget.id());
     }
     lastClickTimeMs = currentTime;
 }
