@@ -2,6 +2,7 @@
 
 import csv
 import json
+from sympy import N
 import yaml
 
 def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_file, xref_i_file):
@@ -27,6 +28,7 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
         header = next(reader)
         for row in reader:
             SalmoNet["node"][row[0]] = {
+                "oma_id": row[0],
                 "name": row[1],
                 "locus": row[2].replace(",", ";"),
                 "old_locus": row[3].replace(",", ";"),
@@ -165,6 +167,7 @@ def export_strain_node_lists(SalmoNet, files_prefix):
 
 def export_protein_data(SalmoNet, path, just_one=False):
     for uniprot in SalmoNet["node"]:
+        print(SalmoNet["node"][uniprot])
         if just_one:
             #uniprot = "E1WFQ7"
             uniprot = "B5R5K2"
@@ -174,6 +177,7 @@ def export_protein_data(SalmoNet, path, just_one=False):
             md_data["description"] = uniprot
             md_data["date"] = "2016-07-01"
             
+            real_oma_id = SalmoNet["node"][uniprot]["oma_id"]
             md_data["genename"] = SalmoNet["node"][uniprot]["name"]
             md_data["old_locus"] = SalmoNet["node"][uniprot]["old_locus"]
             md_data["locus"] = SalmoNet["node"][uniprot]["locus"]
@@ -191,10 +195,11 @@ def export_protein_data(SalmoNet, path, just_one=False):
                     networkjsonnodes[n["data"]["target"]] = True
             for n in networkjsonnodes.keys():
                 if n == SalmoNet["node"][uniprot]["name"]:
-                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"main": True}})
+                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"oma":real_oma_id,"main": True}})
                 else:
-                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"main": False}})
+                    SalmoNet["node"][uniprot]["networkjson"].append({"data":{"id":n,"oma":real_oma_id,"main": False}})
             md_data["networkjson"] = json.dumps(SalmoNet["node"][uniprot]["networkjson"])
+            print(md_data["networkjson"])
             #
             md = yaml.dump(md_data, allow_unicode=True,
                       default_flow_style=False,

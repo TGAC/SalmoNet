@@ -26,7 +26,7 @@ $(document).ready(function(){
                 {id: "data15", hidden:true}
             ],
             height: 450,
-            autowidth: 570,
+            width: 570,
             datatype: "csv",
             data: document.getElementById('interactiontabledata').value
             // data: '{{ .Params.interactioncsv | safeHTML }}'
@@ -36,7 +36,7 @@ $(document).ready(function(){
             css: "toolbar",
             paddingY: 5,
             paddingX: 10,
-            autowidth: 570,
+            width: 570,
             cols:[
                 {
                     view: "button", label: "Download table", width: 200, click:function(){
@@ -46,15 +46,15 @@ $(document).ready(function(){
                             columns:{
                                 "data0":{header: "node_a_genename"},
                                 "data1":{header: "node_b_genename"},
-                                "data12":{header: "source"},
-                                "data13":{header: "references(pubmedID)"},
+                                "data12":{header: "node_a_locus"},
+                                "data13":{header: "node_b_locus"},
                                 "data3":{header: "layer"},
-                                "data14":{header: "mi-score"},
-                                "data15":{header: "interaction_detection_methods"},
-                                "data4":{header: "node_a_locus"},
-                                "data5":{header: "node_b_locus"},
-                                "data6":{header: "node_a_uniprot"},
-                                "data7":{header: "node_b_uniprot"},
+                                "data14":{header: "source"},
+                                "data15":{header: "references(pubmedID)"},
+                                "data4":{header: "mi-score"},
+                                "data5":{header: "interaction_detection_method"},
+                                "data6":{header: "node_a_locus_tag"},
+                                "data7":{header: "node_b_locus_tag"},
                                 "data8":{header: "node_a_ortholog_group"},
                                 "data9":{header: "node_b_ortholog_group"},
                                 "data10":{header: "node_a_strain"},
