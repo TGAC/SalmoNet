@@ -166,7 +166,6 @@ def export_strain_node_lists(SalmoNet, files_prefix):
 
 def export_protein_data(SalmoNet, path, just_one=False):
     for uniprot in SalmoNet["node"]:
-        print(SalmoNet["node"][uniprot])
         if just_one:
             #uniprot = "E1WFQ7"
             uniprot = "B5R5K2"
