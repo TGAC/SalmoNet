@@ -32,7 +32,7 @@
         "SALSV": "Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633",
         "SALTI": "Salmonella enterica subsp. enterica serovar Typhi str. CT18",
         "SALT1": "Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S",
-        "SALT4": "SalmSalmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
+        "SALT4": "Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
         "SALTD": "Salmonella enterica subsp. enterica serovar Typhimurium str. D23580",
         "SALTY": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2",
         "SALTS": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344",
@@ -48,13 +48,15 @@
 
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
-            <dl class="uk-description-list-horizontal" style="width: 200%;">
+            <dl class="uk-description-list-horizontal" style="width: 250%;">
                 <dt>Gene name/Locus tag (old)</dt>
                 <dd>{{ .Params.genename }}</dd>
                 <dt>Locus tag (old)</dt>
                 <dd>{{ .Params.old_locus }}</dd>
                 <dt>Locus tag (new)</dt>
                 <dd>{{ .Params.locus }}</dd>
+                <dt>KEGG ID</dt>
+                <dd>{{ .Params.kegg_id }}</dd>
                 <dt>OMA Identifier</dt>
                 <dd><a id="uniprot" href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}" target="_blank">{{ .Params.uniprot }}</a></dd>
                 <dd><a href="https://omabrowser.org/oma/info/{{ .Params.uniprot }}/fasta" target="_blank">Protein sequence</a></dd>

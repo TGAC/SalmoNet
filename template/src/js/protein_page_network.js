@@ -1,3 +1,14 @@
+function onCytoscapeElementClicked(event) {
+    let currentTime = new Date().getTime();
+    if(currentTime - lastClickTimeMs < 500) {
+      console.log("cytoscape double-click event:" + event.cyTarget.id())
+      ("{{ .Site.BaseURL }}/protein/"+event.cyTarget.id());
+    }
+    lastClickTimeMs = currentTime;
+}
+
+var lastClickTimeMs = 0
+
 $(document).ready(function(){
     var cy = cytoscape({
         container: $('#interactionnetworkdiv'),
@@ -109,6 +120,7 @@ $(document).ready(function(){
     });
     interactionnetworkcontrolldiv.define("width", $("#interactionnetworkcontrolldiv").width());
     interactionnetworkcontrolldiv.resize();
+    cy.on('tap', 'node[!main]', onCytoscapeElementClicked);
 });
 $(window).resize(function() {
     interactionnetworkcontrolldiv.define("width", $("#interactionnetworkcontrolldiv").width());

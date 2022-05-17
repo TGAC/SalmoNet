@@ -64,8 +64,8 @@ subprocess.call(["rm", "-rf", temp_path+"/*"], stdout=subprocess.PIPE)
 # import data
 print("import data")
 SalmoNet = import_HC_data(
-    os.path.join(data_path, "HC_nodes_new.csv"),
-    os.path.join(data_path, "HC_interactions_new.csv"),
+    os.path.join(data_path, "HC_nodes_2022_05_17.csv"),
+    os.path.join(data_path, "HC_interactions_2022_05_16.csv"),
     os.path.join(data_path, "HC_xref_source_new.csv"),
     os.path.join(data_path, "HC_xref_matrix_new.csv"),
     os.path.join(data_path, "HC_xref_new.csv"),

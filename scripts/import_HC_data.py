@@ -30,6 +30,7 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                 "name": row[1],
                 "locus": row[2].replace(",", ";"),
                 "old_locus": row[3].replace(",", ";"),
+                "kegg_id": row[7],
                 "group": row[4],
                 "strain": row[5],
                 "num_ortholog": 0,
@@ -77,6 +78,8 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
                 "target": row[1],
                 "ref": ref,
                 "layer": row[3],
+                "miscore": row[4],
+                "int_det_mets": row[5],
                 "pmids": ",".join(pmids),
                 "pmlink": pmlink,
             }
@@ -84,11 +87,13 @@ def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_fi
             SalmoNet["node"][row[0]]["num_interaction"] += 1
             if SalmoNet["node"][row[0]] != SalmoNet["node"][row[1]]:
                 SalmoNet["node"][row[1]]["num_interaction"] += 1
-            icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
+            icsv = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
                 SalmoNet["node"][row[0]]["name"],
                 SalmoNet["node"][row[1]]["name"],
                 " ".join(ref)+"&ensp;"+pmlink,
                 row[3],
+                row[4],
+                row[5],
                 SalmoNet["node"][row[0]]["locus"],
                 SalmoNet["node"][row[1]]["locus"],
                 row[0],
@@ -147,12 +152,13 @@ def export_strain_node_lists(SalmoNet, files_prefix):
         with open("%s/nodes%s.csv" % (files_prefix, id+1), "w") as f:
             for nid, node in enumerate(SalmoNet["node"]):
                 if SalmoNet["node"][node]["strain"] == strain:
-                    f.write("%s,%s,%s,%s,%s,%s,%s\n" % (
+                    f.write("%s,%s,%s,%s,%s,%s,%s,%s\n" % (
                         nid,
                         node,
                         SalmoNet["node"][node]["name"],
                         SalmoNet["node"][node]["locus"],
                         SalmoNet["node"][node]["old_locus"],
+                        SalmoNet["node"][node]["kegg_id"],
                         SalmoNet["node"][node]["num_ortholog"],
                         SalmoNet["node"][node]["num_interaction"],
                     ))
@@ -172,10 +178,11 @@ def export_protein_data(SalmoNet, path, just_one=False):
             md_data["old_locus"] = SalmoNet["node"][uniprot]["old_locus"]
             md_data["locus"] = SalmoNet["node"][uniprot]["locus"]
             md_data["strain"] = SalmoNet["node"][uniprot]["strain"]
+            md_data["kegg_id"] = SalmoNet["node"][uniprot]["kegg_id"]
             md_data["orthologs"] = SalmoNet["node"][uniprot]["orthologs"]
             md_data["uniprot"] = uniprot
             md_data["interactioncsv"] = "\n".join(SalmoNet["node"][uniprot]["interactions"])
-            
+
             networkjsonnodes = {}
             for n in SalmoNet["node"][uniprot]["networkjson"]:
                 if n["data"]["source"] not in networkjsonnodes:
