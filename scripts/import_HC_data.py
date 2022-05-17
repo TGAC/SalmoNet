@@ -2,7 +2,6 @@
 
 import csv
 import json
-from sympy import N
 import yaml
 
 def import_HC_data(node_file, interaction_file, xref_source_file, xref_matrix_file, xref_i_file):
