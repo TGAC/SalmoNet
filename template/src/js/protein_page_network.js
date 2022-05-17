@@ -1,5 +1,5 @@
 function onCytoscapeElementClicked(event) {
-    let currentTime = new Date().getTime();
+    var currentTime = new Date().getTime();
     if(currentTime - lastClickTimeMs < 500) {
       console.log("cytoscape double-click event:" + event.cyTarget.id())
       ("{{ .Site.BaseURL }}/protein/"+event.cyTarget.id());
