@@ -5,7 +5,54 @@
     <div class="uk-grid" data-uk-grid-margin>
         <div class="uk-width-medium-1-1">
             <div class="uk-panel uk-panel-box uk-text-center">
-                <h1>Soon...</h1>
+                <h1>Network rewiring on SalmoNet 2 data in Cytoscape</h1>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Prerequisites</strong></p>
+                <h3></h3>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> An up-to-date version of Cytoscape, available from: <a href="https://cytoscape.org/" target="_blank">https://cytoscape.org/</a></p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Downloading data</strong></p>
+                <h3></h3>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Download SalmoNet data from the website: <a href="http://salmonet.org/download" target="_blank">http://salmonet.org/download</a></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Select the <em style="color: black;">Strain</em>, <em style="color: black;">Layer</em>, and output <em style="color: black;">Format</em>, and click on the <em style="color: black;">Download</em> button.</a></p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Calculating network rewiring</strong></p>
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;"><strong>Installing and loading DyNet</strong></p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Network rewiring entails many approaches aimed at quantifying changes between interaction networks, and has been utilised in the past to highlight the specific differences between similar interaction networks (Mehta et al. 2021; Treveil et al. 2020). In this work, we compared the degree of interaction rewiring between the interactomes of host adapted typhoidal Salmonella strains and gastrointestinal Salmonella strains to explore the utility of a multi-layered network resource such as SalmoNet2. To calculate network rewiring in the same manner as shown in the SalmoNet2 publication, one has to download the DyNet application from the Cytoscape app store first (<a href="https://apps.cytoscape.org/apps/dynet" target="_blank">https://apps.cytoscape.org/apps/dynet</a>. This can be done directly from the webpage (which will show a prompt to open Cytoscape), or from within Cytoscape. In the latter case, select <strong>Apps → App Manager ...</strong>, which will return the following window:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/7.png" target="_blank"><img width="500" src="/img/tutorial_images/7.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Typing "DyNet" into the search box will list the application, and it can be installed by clicking on the 'Install' button.</p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">To calculate rewiring we will need to load multiple <em style="color: black;">.csv</em> or <em style="color: black;">PSI-MITAB</em> networks we would like to compare. When selecting <strong>source</strong> and <strong>target</strong> columns, please select the <strong>orthology group ID</strong> columns, as these are the only identifiers we will be able to match our networks on. Please refer to the <strong>Importing data</strong> section for more details. Once multiple networks have been loaded, activate the DyNet application by clicking on <strong>Apps → DyNet Analyzer<sup>1</sup></strong>. A window will appear:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/8.png" target="_blank"><img width="500" src="/img/tutorial_images/8.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">By default all networks will be selected. Networks should be treated as directed or undirected according to the layer type: PPI networks are undirected, regulatory and metabolic layers are directed. Clicking on OK will bring up the main DyNet window:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/9.png" target="_blank"><img width="500" src="/img/tutorial_images/9.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">When working with more than 2 networks, by default <strong>Multiple Network Analysis</strong> is selected. However, once loaded, users can select any subset of networks they wish to compare, which updates the rewiring values in real time. By shift-clicking on <em style="color: black;">S. Agona</em> and <em style="color: black;">S. Schwarzengrund</em> and toggling the <strong>Pairwise Network Comparison</strong> options on the top I can proceed with pairwise network analysis. Here, the colour-coding details the specific binary node and edge differences between the two networks. The Dn rewiring values will be also more discrete: -Inf, 0, and +Inf referring to the absent, matching, and additional interactions when comparing the two networks respectively.</p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Selecting all three networks again and toggling <em style="color: black;">Highlight most varying nodes</em> lets us compare the three <em style="color: black;">Salmonella</em> networks simultaneously.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/10.png" target="_blank"><img width="500" src="/img/tutorial_images/10.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">The resulting rewiring values can be sorted in the <strong>Node table</strong>, and the top n hits can be further analysed in detail. Selecting a node of interest, and right clicking on it brings up a context menu, where after selecting <strong>Apps → DyNet Node Analyzer</strong> the immediate interactome of the selected node can be analysed in detail.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/11.png" target="_blank"><img width="500" src="/img/tutorial_images/11.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">The <strong>Node analyzer</strong> pane lists the interactions present between the selected node and its first neighbours, and the status of these interactions in the compared networks. In this specific example <strong>OMA01179</strong> is missing from S. Schwarzengrund altogether, and as such all further interactions are absent. DyNet synchronises the positions of the nodes and edges across all networks, making visual comparisons easier, as seen on the right of the figure. This multi-network pane can be toggled by clicking on the <strong>Grid</strong> icon onthe bottom of the main window.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/12.png" target="_blank"><img width="500" src="/img/tutorial_images/12.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">The results of the rewiring analysis can be exported from Cytoscape by clicking on <strong>File → Export → Table to File ...</strong>. Make sure to select the <strong>DyNet Central Reference Network default node</strong> table to import, as this table holds the node rewiring data. The results will be saved in a convenient .csv format readable by Microsoft Excel and other similar software.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/13.png" target="_blank"><img width="500" src="/img/tutorial_images/13.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><sup>1</sup>: There is an option titled DyNet Network Importer among the addons, allowing the user to import multiple networks at the same time. However, this requires a special file format that SalmoNet2 does not supply. For more details please refer to the DyNet documentation at <a href="https://apps.cytoscape.org/apps/dynet" target="_blank">https://apps.cytoscape.org/apps/dynet</a></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Mehta TK, Koch C, Nash W, Knaack SA, Sudhakar P, Olbei M, Bastkowski S, Penso-Dolfin L, Korcsmaros T, Haerty W, Roy S, Di-Palma F. <strong>Evolution of regulatory networks associated with traits under selection in cichlids.</strong> <em style="color: black;">Genome Biol.</em> 2021 Jan 8;22(1):25. doi: 10.1186/s13059-020-02208-8. PMID: 33419455; PMCID: PMC7791837.</p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Treveil A, Sudhakar P, Matthews ZJ, Wrzesiński T, Jones EJ, Brooks J, Ölbei M, Hautefort I, Hall LJ, Carding SR, Mayer U, Powell PP, Wileman T, Di Palma F, Haerty W, Korcsmáros T. <strong>Regulatory network analysis of Paneth cell and goblet cell enriched gut organoids using transcriptomics approaches.</strong> <em style="color: black;">Mol Omics.</em> 2020 Feb 17;16(1):39-58. doi: 10.1039/c9mo00130a. PMID: 31819932.</p>
             </div>
         </div>
     </div>
