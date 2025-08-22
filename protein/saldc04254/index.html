@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SALDC04254 &middot; SalmoNet2</title>
+    <link rel="stylesheet" href="http://salmonet.org//css/style.css"/>
+    <script>
+        var data_url_prefix = "http:\/\/salmonet.org\/";
+    </script>
+    <script src="http://salmonet.org//js/app.js"></script>
+</head>
+
+<body>
+<div class="net-top-navbar" data-uk-sticky="">
+    <div class="uk-container uk-container-center">
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="http://salmonet.org/">SalmoNet2</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="">
+                    <a href="http://salmonet.org//">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse/">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download/">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial/">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/salmonella-TF-activity">SalmonAct</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SalmoNet2</div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>groL</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr class="uk-grid-divider">
+    
+    <script>
+
+    var dict = {
+        "SALA4": "Salmonella enterica subsp. enterica serovar Agona str. SL483",
+        "SALAR": "Salmonella enterica subsp. arizonae serovar 62:z4,z23",
+        "SALBC": "Salmonella bongori NCTC 12419",
+        "SALCH": "Salmonella enterica subsp. enterica serovar Choleraesuis str. SC-B67",
+        "SALDC": "Salmonella enterica subsp. enterica serovar Dublin str. CT_02021853",
+        "SALEP": "Salmonella enterica subsp. enterica serovar Enteritidis str. P125109",
+        "SALG2": "Salmonella enterica subsp. enterica serovar Gallinarum str. 287/91",
+        "SALHS": "Salmonella enterica subsp. enterica serovar Heidelberg str. SL476",
+        "SALNS": "Salmonella enterica subsp. enterica serovar Newport str. SL254",
+        "SALPK": "Salmonella enterica subsp. enterica serovar Paratyphi A str. AKU_12601",
+        "SALPA": "Salmonella enterica subsp. enterica serovar Paratyphi A str. ATCC 9150",
+        "SALPB": "Salmonella enterica subsp. enterica serovar Paratyphi B str. SPB7",
+        "SALPC": "Salmonella enterica subsp. enterica serovar Paratyphi C str. RKS4594",
+        "SALSV": "Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633",
+        "SALTI": "Salmonella enterica subsp. enterica serovar Typhi str. CT18",
+        "SALT1": "Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S",
+        "SALT4": "Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
+        "SALTD": "Salmonella enterica subsp. enterica serovar Typhimurium str. D23580",
+        "SALTY": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2",
+        "SALTS": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344",
+    };
+
+    window.onload = function() {
+        var actual_strain = dict['SALDC'];
+
+        document.getElementById('strain_original').innerHTML = actual_strain;
+    }
+
+    </script>
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <dl class="uk-description-list-horizontal" style="width: 250%;">
+                <dt>Gene name/Locus tag (old)</dt>
+                <dd>groL</dd>
+                <dt>Locus tag (old)</dt>
+                <dd>SeD_A4727</dd>
+                <dt>Locus tag (new)</dt>
+                <dd>SED_RS22715</dd>
+                <dt>KEGG ID</dt>
+                <dd>-</dd>
+                <dt>OMA Identifier</dt>
+                <dd><a id="uniprot" href="https://omabrowser.org/oma/info/SALDC04254" target="_blank">SALDC04254</a></dd>
+                <dd><a href="https://omabrowser.org/oma/info/SALDC04254/fasta" target="_blank">Protein sequence</a></dd>
+                <dt>Strain</dt>
+                <dd><i><p id="strain_original"></p></i></dd>
+            </dl>
+        </div>
+        <div class="uk-width-medium-1-2">
+
+        </div>
+    </div>
+
+
+    <hr class="uk-grid-divider">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Interactions</h2>
+            <div id="interactiontablediv" ></div>
+            <input id="interactiontabledata" type="hidden" name="interactiontabledata" value="groL,ycgR,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS22715,SED_RS07680,SALDC04254,SALDC01386,616,3182,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,SeD_A3981,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS22715,SED_RS19190,SALDC04254,SALDC03602,616,3731,&#34;SALDC&#34;,&#34;SALDC&#34;,Lit Ecoli IntAct,24561554,22121220
+groL,rfbC,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS22715,SED_RS12010,SALDC04254,SALDC02225,616,3975,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,cho,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS22715,SED_RS10135,SALDC04254,SALDC01860,616,2344,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,aceE,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS22715,SED_RS01210,SALDC04254,SALDC00150,616,117,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,flhA,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.57295495,two hybrid array|pull down,SED_RS22715,SED_RS15430,SALDC04254,SALDC02868,616,257,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+flhA,groL,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS15430,SED_RS22715,SALDC02868,SALDC04254,257,616,&#34;SALDC&#34;,&#34;SALDC&#34;,Lit Ecoli IntAct,24561554,22121220
+helD,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS05900,SED_RS22715,SALDC01052,SALDC04254,308,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+recD,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS16125,SED_RS22715,SALDC03002,SALDC04254,436,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+hycE,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6687045,pull down|cross-linking study,SED_RS15380,SED_RS22715,SALDC02858,SALDC04254,497,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,groL,IntAct Interactome3d&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#43;OR&#43;23399932%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS22715,SED_RS22715,SALDC04254,SALDC04254,616,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct Interactome3d,22121220,23399932
+metK,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.58988434,pull down|molecular sieving,SED_RS16625,SED_RS22715,SALDC03102,SALDC04254,1495,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+hypD,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS15420,SED_RS22715,SALDC02866,SALDC04254,1563,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+ribD,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS02570,SED_RS22715,SALDC00414,SALDC04254,1649,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+aroH,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5472612,pull down|two hybrid array,SED_RS09940,SED_RS22715,SALDC01823,SALDC04254,1799,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+tdh,groL,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS19735,SED_RS22715,SALDC03706,SALDC04254,1861,616,&#34;SALDC&#34;,&#34;SALDC&#34;,Lit Ecoli IntAct,24561554,22121220
+SeD_A3629,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6622512,pull down|tandem affinity purification,SED_RS17530,SED_RS22715,SALDC03285,SALDC04254,1990,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+ruvB,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS06895,SED_RS22715,SALDC01236,SALDC04254,2015,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+moaA,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS04680,SED_RS22715,SALDC00810,SALDC04254,2030,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+prs,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5635349,tandem affinity purification|pull down,SED_RS07775,SED_RS22715,SALDC01407,SALDC04254,2179,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+rpoH,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.65601856,anti bait coimmunoprecipitation|classical fluorescence spectroscopy,SED_RS19000,SED_RS22715,SALDC03562,SALDC04254,2616,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+kdsA,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS07815,SED_RS22715,SALDC01417,SALDC04254,2646,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+SeD_A3970,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS19140,SED_RS22715,SALDC03591,SALDC04254,2647,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+pstB,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS20425,SED_RS22715,SALDC03836,SALDC04254,2785,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+mlaF,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS17730,SED_RS22715,SALDC03321,SALDC04254,2804,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+znuC,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS06905,SED_RS22715,SALDC01238,SALDC04254,2814,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+nei,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS04310,SED_RS22715,SALDC00741,SALDC04254,2874,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+ulaR,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS22970,SED_RS22715,SALDC04299,SALDC04254,3046,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+clpP,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS02730,SED_RS22715,SALDC00446,SALDC04254,3116,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+ftsE,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS19010,SED_RS22715,SALDC03564,SALDC04254,3505,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+SeD_A3400,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS16480,SED_RS22715,SALDC03077,SALDC04254,3748,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+yajL,groL,Biogrid&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=27980099%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS02655,SED_RS22715,SALDC00431,SALDC04254,3846,616,&#34;SALDC&#34;,&#34;SALDC&#34;,Biogrid,27980099
+SeD_A4726,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.97595006,cross-linking study|electron microscopy|fluorescence correlation spectroscopy|fluorescent resonance energy transfer|nuclear magnetic resonance|x-ray crystallography|cosedimentation in solution|competition binding|electron tomography|molecular sieving|fluorescence technology,SED_RS22710,SED_RS22715,SALDC04253,SALDC04254,4426,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+uspG,groL,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.7478933,pull down|tandem affinity purification|anti bait coimmunoprecipitation|cosedimentation through density gradient,SED_RS03800,SED_RS22715,SALDC00649,SALDC04254,4611,616,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,malE,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.61847615,fluorescence correlation spectroscopy|fluorescence polarization spectroscopy|fluorescent resonance energy transfer,SED_RS22715,SED_RS22195,SALDC04254,SALDC04159,616,936,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,recF,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6622512,pull down|tandem affinity purification,SED_RS22715,SED_RS20350,SALDC04254,SALDC03822,616,1754,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,aroH,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS22715,SED_RS09940,SALDC04254,SALDC01823,616,1799,&#34;SALDC&#34;,&#34;SALDC&#34;,Lit Ecoli IntAct,24561554,22121220
+groL,pyrD,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,pull down|tandem affinity purification,SED_RS22715,SED_RS05815,SALDC04254,SALDC01035,616,1998,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,grpE,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS22715,SED_RS14670,SALDC04254,SALDC02727,616,3082,&#34;SALDC&#34;,&#34;SALDC&#34;,Lit Ecoli IntAct,24561554,22121220
+groL,fetA,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.6225892,pull down|tandem affinity purification,SED_RS22715,SED_RS02995,SALDC04254,SALDC00502,616,3429,&#34;SALDC&#34;,&#34;SALDC&#34;,IntAct,22121220
+groL,SeD_A4726,Interactome3d&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=23399932%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SED_RS22715,SED_RS22710,SALDC04254,SALDC04253,616,4426,&#34;SALDC&#34;,&#34;SALDC&#34;,Interactome3d,23399932">
+            <p class="uk-text-small">(Download may not work in Safari)</p>
+        </div>
+        <div class="uk-width-medium-1-2">
+            <h2>&nbsp;</h2>
+            <div id="interactionnetworkdiv" style="height: 450px;"></div>
+            <div id="interactionnetworkcontrolldiv" style="width: 100%;"></div>
+            <input id="interactionnetworkdata" type="hidden" name="interactionnetworkdata" value="[{&#34;data&#34;: {&#34;id&#34;: &#34;groL_ycgR&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;ycgR&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_SeD_A3981&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;SeD_A3981&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_rfbC&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;rfbC&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_cho&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;cho&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_aceE&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;aceE&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_flhA&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;flhA&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;flhA_groL&#34;, &#34;source&#34;: &#34;flhA&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;helD_groL&#34;, &#34;source&#34;: &#34;helD&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;recD_groL&#34;, &#34;source&#34;: &#34;recD&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hycE_groL&#34;, &#34;source&#34;: &#34;hycE&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_groL&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;metK_groL&#34;, &#34;source&#34;: &#34;metK&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hypD_groL&#34;, &#34;source&#34;: &#34;hypD&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ribD_groL&#34;, &#34;source&#34;: &#34;ribD&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroH_groL&#34;, &#34;source&#34;: &#34;aroH&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tdh_groL&#34;, &#34;source&#34;: &#34;tdh&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3629_groL&#34;, &#34;source&#34;: &#34;SeD_A3629&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ruvB_groL&#34;, &#34;source&#34;: &#34;ruvB&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;moaA_groL&#34;, &#34;source&#34;: &#34;moaA&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prs_groL&#34;, &#34;source&#34;: &#34;prs&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rpoH_groL&#34;, &#34;source&#34;: &#34;rpoH&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;kdsA_groL&#34;, &#34;source&#34;: &#34;kdsA&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3970_groL&#34;, &#34;source&#34;: &#34;SeD_A3970&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pstB_groL&#34;, &#34;source&#34;: &#34;pstB&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mlaF_groL&#34;, &#34;source&#34;: &#34;mlaF&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;znuC_groL&#34;, &#34;source&#34;: &#34;znuC&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;nei_groL&#34;, &#34;source&#34;: &#34;nei&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ulaR_groL&#34;, &#34;source&#34;: &#34;ulaR&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clpP_groL&#34;, &#34;source&#34;: &#34;clpP&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ftsE_groL&#34;, &#34;source&#34;: &#34;ftsE&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3400_groL&#34;, &#34;source&#34;: &#34;SeD_A3400&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;yajL_groL&#34;, &#34;source&#34;: &#34;yajL&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A4726_groL&#34;, &#34;source&#34;: &#34;SeD_A4726&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uspG_groL&#34;, &#34;source&#34;: &#34;uspG&#34;, &#34;target&#34;: &#34;groL&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_malE&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;malE&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_recF&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;recF&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_aroH&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;aroH&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_pyrD&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;pyrD&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_grpE&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;grpE&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_fetA&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;fetA&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL_SeD_A4726&#34;, &#34;source&#34;: &#34;groL&#34;, &#34;target&#34;: &#34;SeD_A4726&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;groL&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: true}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ycgR&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3981&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rfbC&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cho&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aceE&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;flhA&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;helD&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;recD&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hycE&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;metK&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hypD&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ribD&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroH&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tdh&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3629&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ruvB&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;moaA&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prs&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rpoH&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;kdsA&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3970&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pstB&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mlaF&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;znuC&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;nei&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ulaR&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clpP&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ftsE&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A3400&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;yajL&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SeD_A4726&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uspG&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;malE&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;recF&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pyrD&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;grpE&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fetA&#34;, &#34;oma&#34;: &#34;SALDC04254&#34;, &#34;main&#34;: false}}]">
+        </div>
+    </div>
+    <hr class="uk-grid-divider">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Orthologs of groL</h2>
+            <dl class="uk-description-list-horizontal" style="width: 200%;">
+                
+                <dt><a href="http://salmonet.org/protein/salpc04297/">SALPC04297</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salbc03715/">SALBC03715</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALBC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salar03170/">SALAR03170</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALAR'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saldc04254/">SALDC04254</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALDC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salep04054/">SALEP04054</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALEP'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpa03838/">SALPA03838</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPA'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpb05245/">SALPB05245</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPB'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salhs04387/">SALHS04387</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALHS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salty04166/">SALTY04166</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTY'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salns04351/">SALNS04351</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALNS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salti04286/">SALTI04286</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTI'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saltd04249/">SALTD04249</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTD'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salts04234/">SALTS04234</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt105013/">SALT105013</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT1'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/sala404249/">SALA404249</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALA4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt404338/">SALT404338</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salch04155/">SALCH04155</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALCH'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salsv04251/">SALSV04251</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALSV'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salg204013/">SALG204013</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALG2'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpk04010/">SALPK04010</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPK'];
+                </script>
+                
+            </dl>
+        </div>
+    </div>
+
+    
+    <div id="legendmodal" class="uk-modal" name="help_table">
+        <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close"></a>
+            <div class="uk-modal-header">Legend for interactions table</div>
+            
+            <h3>Metabolic layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Enzymes of the metabolic reaction</dd>
+                <dt>Links</dt>
+                <dd>Two nodes are linked if the rections they catalyse have a common substrate and/or product.</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>BioModels</td>
+                            <td>The links were obtained from the EC numbers of https://www.ebi.ac.uk/biomodels-main/
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STM</td>
+                            <td>Orthologous enzymes from a validated mathematical model of S. Typhymurium LT2
+                                (PMID:21244678)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+            <h3>Regulatory layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>TF (Transcription Factors)<br>TG (Target genes)</dd>
+                <dt>Links</dt>
+                <dd>Regulatory links represent binding of transcription factors to gene promoters (undirected links)
+                </dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Ecoli</td>
+                            <td>The links were obtained by alignement of the promoter regions to binding sites of
+                                orthologous genes from E. coli as described in <a href="http://regulondb.ccg.unam.mx/" target="_blank">RegulonDB</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salm</td>
+                            <td>The links were obtained using Position Specific Scoring Matrices (PSSMs) from binding
+                                sites
+                                of Salmonella found in the literature
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp(LT)</td>
+                            <td>The links were determined experimentally by low-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EXP(HT)</td>
+                            <td>The links were determined experimentally by high-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+
+            <h3>PPI layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Proteins</dd>
+                <dt>Links</dt>
+                <dd>Orthologous proteins of E. coli which bind together</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Lit_Ecoli</td>
+                            <td>The links were derived from a <a href="https://www.ncbi.nlm.nih.gov/pubmed/24561554" target="_blank">publication (PMID:24561554)</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IntAct</td>
+                            <td>The links were derived from the <a href="http://www.ebi.ac.uk/intact/" target="_blank">Intact</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Biogrid</td>
+                            <td>The links were derived from the <a href="http://thebiogrid.org/" target="_blank">Biogrid</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Interactome3d</td>
+                            <td>The links were derived from the <a href="http://interactome3d.irbbarcelona.org/)" target="_blank">Interactome3D</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp</td>
+                            <td>The binding interactions were determined experimentally (PMID indicates the pubmed
+                                reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="uk-modal-footer">...</div>
+    </div>
+</div>
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="http://salmonet.org/">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-73347324-4', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

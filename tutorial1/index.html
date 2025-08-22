@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial - part1 &middot; SalmoNet2</title>
+    <link rel="stylesheet" href="http://salmonet.org//css/style.css"/>
+    <script>
+        var data_url_prefix = "http:\/\/salmonet.org\/";
+    </script>
+    <script src="http://salmonet.org//js/app.js"></script>
+</head>
+
+<body>
+<div class="net-top-navbar" data-uk-sticky="">
+    <div class="uk-container uk-container-center">
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="http://salmonet.org/">SalmoNet2</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="">
+                    <a href="http://salmonet.org//">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse/">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download/">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial/">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/salmonella-TF-activity">SalmonAct</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SalmoNet2</div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>Browsing and analysing SalmoNet 2 data in Cytoscape</h1>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Prerequisites</strong></p>
+                <h3></h3>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> An up-to-date version of Cytoscape, available from: <a href="https://cytoscape.org/" target="_blank">https://cytoscape.org/</a></p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Downloading data</strong></p>
+                <h3></h3>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Download SalmoNet data from the website: <a href="http://salmonet.org/download" target="_blank">http://salmonet.org/download</a></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Select the <em style="color: black;">Strain</em>, <em style="color: black;">Layer</em>, and output <em style="color: black;">Format</em>, and click on the <em style="color: black;">Download</em> button.</a></p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Importing data</strong></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> If you downloaded a <em style="color: black;">.cys</em> format network file, open it with <strong>File → Open ...</strong></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> If you downloaded a <em style="color: black;">.cys</em> or <em style="color: black;">PSI-MITAB</em> file, import it with the <strong>File → Import → Network from File</strong> option</p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> After selecting the import option, you will be greeted by a window like the following:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/1.png" target="_blank"><img width="500" src="/img/tutorial_images/1.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> The pictograms show the category you would like to place the individual columns into. The green and orange dot are the "main" source and target nodes, while the green and orange file icons will be your node attributes, like alternative IDs.</p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> Make sure you select the green dot for the source interactor.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/2.png" target="_blank"><img width="500" src="/img/tutorial_images/2.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> And select the orange circles for the target interactor.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/3.png" target="_blank"><img width="500" src="/img/tutorial_images/3.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> If everything goes well after a bried loadtime you should see a network like this:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/4.png" target="_blank"><img width="500" src="/img/tutorial_images/4.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>The Cytoscape GUI</strong></p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/5.png" target="_blank"><img width="500" src="/img/tutorial_images/5.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">The user interface has 3 main elements:</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> 1: The panel on the left lets you select the visual mapping options (Node, Edge, and Network tabs on the bottom)</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> 2: The main window visualizes the network and its layout, and lets you manipulate nodes/edges directly</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> 3: The table pane on the bottom lets you look at the network data directly. Node table contains information pertaining to nodes, the Edge table to edges, and the Network table to the networks</p>
+            </div>
+
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Network analysis</strong></p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Our networks only contain interaction and potential annotation data by default. To identify and visualize the inherent characteristics of our network, we will run a group of network analysis methods on them. Thankfully Cytoscape can calculate the most important metrics by default, and there are more methods available through the Cytoscape app store.</p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">To run the network analysis, select the Tools menu point from the toolbar, and click on Network Analysis. After a few seconds a number of new columns should show up in the Node Table of our network.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6.png" target="_blank"><img width="500" src="/img/tutorial_images/6.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">These statistics can tell us a lot about the networks and nodes we are analysing. For example, the degree of a node notes the amount of neighbours it has in the network. These high degree nodes, also known as hubs, are often important biologically, taking part in many processes. To read more about the rest of the metrics we recommend the freely available online  Barabasi (<a href="http://networksciencebook.com/" target="_blank">http://networksciencebook.com/</a>).</p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Importing expression data</strong></p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Download a subset of data from an applicable source. In this example we are using inter-strain relative expression levels from the SalComD23580 database. Select a group of genes, and download the resulting table. (<a href="http://bioinf.gen.tcd.ie/cgi-bin/salcom_v2.pl?_HL" target="_blank">http://bioinf.gen.tcd.ie/cgi-bin/salcom_v2.pl?_HL</a>).</p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">Download and load the S. Typhimurium 4/74 network from the SalmoNet website, and load it into Cytoscape using the steps outlined above.</p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">To overlay the expression data open the downloaded expression table file:</p>
+
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> <strong>File → Import → Table from File ...</strong></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Select the expression file from the file system</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Clicking on import will open a window like this:</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6_2.png" target="_blank"><img width="500" src="/img/tutorial_images/6_2.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">To match the network information with the expression information we need to find the matching identifiers to combine the data on. The <em>Key Column for Network</em> toggle lets you select the column to match on from the network's side, and clicking on the columns from the table below, and selecting the <strong>key</strong> icon lets you indicate the column to match on from the table's side.</p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">After a brief load time the new columns will appear in the node table.</p>
+            </div>
+
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <p style="text-align: left; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;"><strong>Visualizing expression data</strong></p>
+                <p style="text-align: justify; margin-left: 2.5%;margin-right: 2.5%;font-size: medium;">To visualise the expression data in the context of the network, we need to select the rows we would like to analyse from the table, and their first neighbours so we add some context to the subset.</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> This can be done by holding down the <stong>shift</stong> key and dragging the mouse cursor. Right clicking on the selected rows will bring up a number of options.</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Click on <stong>Select nodes from selected nodes</stong>.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6_3.png" target="_blank"><img width="500" src="/img/tutorial_images/6_3.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> This will highlight the nodes in your network, and reduce the amount of hits in the table column to only the selected ones.</p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> To select their first neighbours use <strong>Select → Nodes → First Neighbours of Selected Nodes → Undirected</strong></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> Create a new subnetwork from your selection <strong>File → New Network → From Selected Nodes, All Edges</strong></p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6_4.png" target="_blank"><img width="500" src="/img/tutorial_images/6_4.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 7.5%;margin-right: 7.5%;">> To visualize the expression differences select the <strong>Style</strong> panel on the side of the window.</p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> Click on <strong>Fill color</strong>, select an environment (e.g. EEP), and select <strong>Continuous mapping</strong> from the second row</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6_5.png" target="_blank"><img width="500" src="/img/tutorial_images/6_5.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> This mapping function takes the values out of our data (i.e. the EEP column), and maps them to a visual value, in this case the node fill colour, visualizing the expression values of the impacted nodes.</p>
+                <p style="text-align: center;"><a href="http://salmonet.org/img/tutorial_images/6_6.png" target="_blank"><img width="500" src="/img/tutorial_images/6_6.png" alt=""></a><br><em style="font-size: x-small; color:black;">For a better resolution, please click on the image</em></p>
+                <p style="text-align: justify; margin-left: 10%;margin-right: 10%;">>> For nodes where no such data was imported, the default color remains, blue in this case.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="http://salmonet.org/">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-73347324-4', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

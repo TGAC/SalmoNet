@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download &middot; SalmoNet2</title>
+    <link rel="stylesheet" href="http://salmonet.org//css/style.css"/>
+    <script>
+        var data_url_prefix = "http:\/\/salmonet.org\/";
+    </script>
+    <script src="http://salmonet.org//js/app.js"></script>
+</head>
+
+<body>
+<div class="net-top-navbar" data-uk-sticky="">
+    <div class="uk-container uk-container-center">
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="http://salmonet.org/">SalmoNet2</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="">
+                    <a href="http://salmonet.org//">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse/">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download/">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial/">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/salmonella-TF-activity">SalmonAct</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SalmoNet2</div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>Download</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-grid">
+        <div class="uk-width-medium-1-5">
+        </div>
+        <div class="uk-width-medium-3-5">
+            <div id="downloadform"></div>
+            <script>
+    
+    function downloadfn(){
+
+        if (downloadform.getValues().strain == "SalmoNet_Consensus") {
+            alert("You will download one of the Consensus file. Please make sure to download the ortholog groups details csv file as well for interpreting the Consensus file!")
+        }
+
+        var url = "https://cdn.netbiol.org/salmonet2/"+downloadform.getValues().strain+"_"+downloadform.getValues().layer+"."+downloadform.getValues().format;
+
+        document.getElementById('downloadframe').src = url;
+    }
+    downloadform = new webix.ui({
+        container: "downloadform",
+        id: "downloadform",
+        view: "form",
+        scroll: false,
+        width: "100%",
+        elements: [
+            { view:"select", label:"Strain", name: "strain", options:[
+                    {id:"SalmoNet_Consensus", value:"Consensus" },
+                    {id:"Salmonella_agona_SL483", value:"Salmonella agona (strain SL483)" },
+                    {id:"Salmonella_arizonae_ATCC_BAA-731_CDC346-86_RSK2980", value:"Salmonella arizonae (strain ATCC BAA-731 / CDC346-86 / RSK2980)"},
+                    {id:"Salmonella_bongori_ATCC_43975_DSM_13772_NCTC_12419", value:"Salmonella bongori (strain ATCC 43975 / DSM 13772 / NCTC 12419)" },
+                    {id:"Salmonella_choleraesuis_SC-B67", value:"Salmonella choleraesuis (strain SC-B67)" },
+                    {id:"Salmonella_dublin_CT_02021853", value:"Salmonella dublin (strain CT_02021853)" },
+                    {id:"Salmonella_enteritidis_PT4_P125109", value:"Salmonella enteritidis PT4 (strain P125109)" },
+                    {id:"Salmonella_gallinarum_287_91_NCTC_13346", value:"Salmonella gallinarum (strain 287/91 / NCTC 13346)" },
+                    {id:"Salmonella_heidelberg_SL476", value:"Salmonella heidelberg (strain SL476)" },
+                    {id:"Salmonella_newport_SL254", value:"Salmonella newport (strain SL254)" },
+                    {id:"Salmonella_paratyphi_A_AKU_12601", value:"Salmonella paratyphi A (strain AKU_12601)" },
+                    {id:"Salmonella_paratyphi_A_ATCC_9150_SARB42", value:"Salmonella paratyphi A (strain ATCC 9150 / SARB42)" },
+                    {id:"Salmonella_paratyphi_B_ATCC_BAA-1250_SPB7", value:"Salmonella paratyphi B (strain ATCC BAA-1250 / SPB7)" },
+                    {id:"Salmonella_paratyphi_C_RKS4594", value:"Salmonella paratyphi C (strain RKS4594)" },
+                    {id:"Salmonella_schwarzengrund_CVM19633", value:"Salmonella schwarzengrund (strain CVM19633)" },
+                    {id:"Salmonella_typhi", value:"Salmonella typhi" },
+                    {id:"Salmonella_typhimurium_14028s_SGSC_2262", value:"Salmonella typhimurium (strain 14028s / SGSC 2262)" },
+                    {id:"Salmonella_typhimurium_4_74", value:"Salmonella typhimurium (strain 4/74)" },
+                    {id:"Salmonella_typhimurium_D23580", value:"Salmonella typhimurium (strain D23580)" },
+                    {id:"Salmonella_typhimurium_LT2_SGSC1412_ATCC_700720", value:"Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)" },
+                    {id:"Salmonella_typhimurium_SL1344", value:"Salmonella typhimurium (strain SL1344)" },
+            ] },
+            { view:"select", label:"Layer", name: "layer", options:[
+                    {id:"allnetworks", value:"All" },
+                    {id:"PN", value:"Protein-protein interaction" },
+                    {id:"RN", value:"Regulatory" },
+                    {id:"MN", value:"Metabolic" }
+            ] },
+            { view:"select", label:"Format", name: "format", options:[
+                    {id:"csv", value:"CSV" },
+                    {id:"psimitab", value:"PSI-MITAB" },
+                    {id:"cys", value:"Cytoscape" }
+            ] },
+            { view:"button", value:"Download", name: "download_button", width:200, align:"center", click:downloadfn},
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet2/ortholog_groups_details.csv' class='download_link'>Download ortholog groups details</a>"},
+            {view: "label", label: "<a href='https://cdn.netbiol.org/salmonet/salmonet_v1.zip' class='download_link'>Download the first version of SalmoNet</a>"}
+        ]
+    });
+
+    
+            </script>
+        </div>
+        <div class="uk-width-medium-1-5">
+        </div>
+    </div>
+</div>
+<iframe id="downloadframe" style="display:none"></iframe>
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="http://salmonet.org/">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-73347324-4', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

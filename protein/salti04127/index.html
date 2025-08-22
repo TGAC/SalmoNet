@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SALTI04127 &middot; SalmoNet2</title>
+    <link rel="stylesheet" href="http://salmonet.org//css/style.css"/>
+    <script>
+        var data_url_prefix = "http:\/\/salmonet.org\/";
+    </script>
+    <script src="http://salmonet.org//js/app.js"></script>
+</head>
+
+<body>
+<div class="net-top-navbar" data-uk-sticky="">
+    <div class="uk-container uk-container-center">
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="http://salmonet.org/">SalmoNet2</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="">
+                    <a href="http://salmonet.org//">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse/">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download/">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial/">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/salmonella-TF-activity">SalmonAct</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SalmoNet2</div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>STY4515</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr class="uk-grid-divider">
+    
+    <script>
+
+    var dict = {
+        "SALA4": "Salmonella enterica subsp. enterica serovar Agona str. SL483",
+        "SALAR": "Salmonella enterica subsp. arizonae serovar 62:z4,z23",
+        "SALBC": "Salmonella bongori NCTC 12419",
+        "SALCH": "Salmonella enterica subsp. enterica serovar Choleraesuis str. SC-B67",
+        "SALDC": "Salmonella enterica subsp. enterica serovar Dublin str. CT_02021853",
+        "SALEP": "Salmonella enterica subsp. enterica serovar Enteritidis str. P125109",
+        "SALG2": "Salmonella enterica subsp. enterica serovar Gallinarum str. 287/91",
+        "SALHS": "Salmonella enterica subsp. enterica serovar Heidelberg str. SL476",
+        "SALNS": "Salmonella enterica subsp. enterica serovar Newport str. SL254",
+        "SALPK": "Salmonella enterica subsp. enterica serovar Paratyphi A str. AKU_12601",
+        "SALPA": "Salmonella enterica subsp. enterica serovar Paratyphi A str. ATCC 9150",
+        "SALPB": "Salmonella enterica subsp. enterica serovar Paratyphi B str. SPB7",
+        "SALPC": "Salmonella enterica subsp. enterica serovar Paratyphi C str. RKS4594",
+        "SALSV": "Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633",
+        "SALTI": "Salmonella enterica subsp. enterica serovar Typhi str. CT18",
+        "SALT1": "Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S",
+        "SALT4": "Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
+        "SALTD": "Salmonella enterica subsp. enterica serovar Typhimurium str. D23580",
+        "SALTY": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2",
+        "SALTS": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344",
+    };
+
+    window.onload = function() {
+        var actual_strain = dict['SALTI'];
+
+        document.getElementById('strain_original').innerHTML = actual_strain;
+    }
+
+    </script>
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <dl class="uk-description-list-horizontal" style="width: 250%;">
+                <dt>Gene name/Locus tag (old)</dt>
+                <dd>STY4515</dd>
+                <dt>Locus tag (old)</dt>
+                <dd>STY4515</dd>
+                <dt>Locus tag (new)</dt>
+                <dd>STY_RS21590</dd>
+                <dt>KEGG ID</dt>
+                <dd>-</dd>
+                <dt>OMA Identifier</dt>
+                <dd><a id="uniprot" href="https://omabrowser.org/oma/info/SALTI04127" target="_blank">SALTI04127</a></dd>
+                <dd><a href="https://omabrowser.org/oma/info/SALTI04127/fasta" target="_blank">Protein sequence</a></dd>
+                <dt>Strain</dt>
+                <dd><i><p id="strain_original"></p></i></dd>
+            </dl>
+        </div>
+        <div class="uk-width-medium-1-2">
+
+        </div>
+    </div>
+
+
+    <hr class="uk-grid-divider">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Interactions</h2>
+            <div id="interactiontablediv" ></div>
+            <input id="interactiontabledata" type="hidden" name="interactiontabledata" value="STY4515,rcsC,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS11755,SALTI04127,SALTI02274,2510,88,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,aas,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14955,SALTI04127,SALTI02878,2510,266,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY0257,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS01180,SALTI04127,SALTI00232,2510,458,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY0376,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS01745,SALTI04127,SALTI00340,2510,653,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,proY,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS02020,SALTI04127,SALTI00394,2510,828,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY1353,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS06350,SALTI04127,SALTI01222,2510,943,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2690,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12715,SALTI04127,SALTI02453,2510,1107,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,asd,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS20380,SALTI04127,SALTI03890,2510,1479,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,ttcA,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS06615,SALTI04127,SALTI01275,2510,2219,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY4666,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS22285,SALTI04127,SALTI04262,2510,2475,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+arcA,STY4515,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS23000,STY_RS21590,SALTI04403,SALTI04127,1319,2510,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY3223,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS15295,SALTI04127,SALTI02939,2510,2678,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,fabI,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS06335,SALTI04127,SALTI01221,2510,2917,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY0658,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS03060,SALTI04127,SALTI00598,2510,3945,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY3138,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14900,SALTI04127,SALTI02868,2510,4317,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY4198,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS20035,SALTI04127,SALTI03822,2510,4960,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY1843,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS08710,SALTI04127,SALTI01671,2510,5555,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY4830,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS23130,SALTI04127,SALTI04428,2510,5714,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,sopF,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS08920,SALTI04127,SALTI01717,2510,1577,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,pgtC,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12430,SALTI04127,SALTI02405,2510,1104,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,eutS,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12800,SALTI04127,SALTI02469,2510,5176,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY3948,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS18900,SALTI04127,SALTI03604,2510,1919,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,ybaK,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS02525,SALTI04127,SALTI00492,2510,4413,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,cadC,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS13250,SALTI04127,SALTI02559,2510,666,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,narQ,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12850,SALTI04127,SALTI02479,2510,424,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY1163,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS05385,SALTI04127,SALTI01042,2510,2536,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,fadL,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12360,SALTI04127,SALTI02394,2510,1089,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2622,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS12355,SALTI04127,SALTI02393,2510,5252,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,uhpT,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS19115,SALTI04127,SALTI03645,2510,938,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY1413,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS06625,SALTI04127,SALTI01276,2510,426,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY1891,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS08915,SALTI04127,SALTI01716,2510,4642,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+araC,STY4515,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS00540,STY_RS21590,SALTI00106,SALTI04127,2591,2510,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,glnH,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS04060,SALTI04127,SALTI00788,2510,3141,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY4859,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS23250,SALTI04127,SALTI04454,2510,2286,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2004,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS09395,SALTI04127,SALTI01810,2510,356,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2005,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS09400,SALTI04127,SALTI01811,2510,1569,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,orgB,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14200,SALTI04127,SALTI02733,2510,3355,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,dnaG,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS16015,SALTI04127,SALTI03081,2510,482,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,dtpA,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS07855,SALTI04127,SALTI01509,2510,733,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+aroE,STY4515,Lit Ecoli IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=24561554%5Buid%5D&#43;OR&#43;22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,STY_RS20995,STY_RS21590,SALTI04012,SALTI04127,2797,2510,&#34;SALTI&#34;,&#34;SALTI&#34;,Lit Ecoli IntAct,24561554,22121220
+STY4515,STY2460,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS11565,SALTI04127,SALTI02245,2510,463,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,hilA,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14235,SALTI04127,SALTI02740,2510,542,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,prgH,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14225,SALTI04127,SALTI02738,2510,1318,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2458,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS11555,SALTI04127,SALTI02243,2510,1415,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,hilD,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14230,SALTI04127,SALTI02739,2510,2238,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+fur,STY4515,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS03435,STY_RS21590,SALTI00667,SALTI04127,4467,2510,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,prgK,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14210,SALTI04127,SALTI02735,2510,3020,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,rsuA,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS11560,SALTI04127,SALTI02244,2510,3340,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,orgA,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14205,SALTI04127,SALTI02734,2510,3738,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY4763,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS22775,SALTI04127,SALTI04360,2510,3957,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,iagB,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14240,SALTI04127,SALTI02741,2510,4265,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,STY2989,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14195,SALTI04127,SALTI02732,2510,4492,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,prgJ,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14215,SALTI04127,SALTI02736,2510,5311,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology
+STY4515,prgI,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,STY_RS21590,STY_RS14220,SALTI04127,SALTI02737,2510,5667,&#34;SALTI&#34;,&#34;SALTI&#34;,Salm,based on orthology">
+            <p class="uk-text-small">(Download may not work in Safari)</p>
+        </div>
+        <div class="uk-width-medium-1-2">
+            <h2>&nbsp;</h2>
+            <div id="interactionnetworkdiv" style="height: 450px;"></div>
+            <div id="interactionnetworkcontrolldiv" style="width: 100%;"></div>
+            <input id="interactionnetworkdata" type="hidden" name="interactionnetworkdata" value="[{&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_rcsC&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;rcsC&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_aas&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;aas&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY0257&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY0257&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY0376&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY0376&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_proY&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;proY&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY1353&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY1353&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2690&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2690&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_asd&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;asd&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_ttcA&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;ttcA&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY4666&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY4666&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;arcA_STY4515&#34;, &#34;source&#34;: &#34;arcA&#34;, &#34;target&#34;: &#34;STY4515&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY3223&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY3223&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_fabI&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;fabI&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY0658&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY0658&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY3138&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY3138&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY4198&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY4198&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY1843&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY1843&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY4830&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY4830&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_sopF&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;sopF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_pgtC&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;pgtC&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_eutS&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;eutS&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY3948&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY3948&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_ybaK&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;ybaK&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_cadC&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;cadC&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_narQ&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;narQ&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY1163&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY1163&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_fadL&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;fadL&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2622&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2622&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_uhpT&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;uhpT&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY1413&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY1413&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY1891&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY1891&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;araC_STY4515&#34;, &#34;source&#34;: &#34;araC&#34;, &#34;target&#34;: &#34;STY4515&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_glnH&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;glnH&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY4859&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY4859&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2004&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2004&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2005&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2005&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_orgB&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;orgB&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_dnaG&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;dnaG&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_dtpA&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;dtpA&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroE_STY4515&#34;, &#34;source&#34;: &#34;aroE&#34;, &#34;target&#34;: &#34;STY4515&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2460&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2460&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_hilA&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;hilA&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_prgH&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;prgH&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2458&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2458&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_hilD&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;hilD&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fur_STY4515&#34;, &#34;source&#34;: &#34;fur&#34;, &#34;target&#34;: &#34;STY4515&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_prgK&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;prgK&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_rsuA&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;rsuA&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_orgA&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;orgA&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY4763&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY4763&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_iagB&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;iagB&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_STY2989&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;STY2989&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_prgJ&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;prgJ&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515_prgI&#34;, &#34;source&#34;: &#34;STY4515&#34;, &#34;target&#34;: &#34;prgI&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4515&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: true}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rcsC&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aas&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY0257&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY0376&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;proY&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY1353&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2690&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;asd&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ttcA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4666&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;arcA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY3223&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fabI&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY0658&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY3138&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4198&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY1843&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4830&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;sopF&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pgtC&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;eutS&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY3948&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ybaK&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cadC&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;narQ&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY1163&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fadL&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2622&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uhpT&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY1413&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY1891&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;araC&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;glnH&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4859&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2004&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2005&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;orgB&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;dnaG&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;dtpA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroE&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2460&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hilA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prgH&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2458&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hilD&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fur&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prgK&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rsuA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;orgA&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY4763&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;iagB&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;STY2989&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prgJ&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;prgI&#34;, &#34;oma&#34;: &#34;SALTI04127&#34;, &#34;main&#34;: false}}]">
+        </div>
+    </div>
+    <hr class="uk-grid-divider">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Orthologs of STY4515</h2>
+            <dl class="uk-description-list-horizontal" style="width: 200%;">
+                
+                <dt><a href="http://salmonet.org/protein/salpb05108/">SALPB05108</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPB'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salhs04313/">SALHS04313</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALHS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salbc03702/">SALBC03702</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALBC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salty04152/">SALTY04152</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTY'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salns04325/">SALNS04325</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALNS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salti04127/">SALTI04127</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTI'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salar03194/">SALAR03194</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALAR'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saltd04235/">SALTD04235</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTD'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salts04218/">SALTS04218</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt104995/">SALT104995</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT1'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/sala404227/">SALA404227</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALA4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt404322/">SALT404322</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpc04201/">SALPC04201</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salch04137/">SALCH04137</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALCH'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salsv04223/">SALSV04223</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALSV'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saldc04240/">SALDC04240</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALDC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salep04040/">SALEP04040</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALEP'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salg203999/">SALG203999</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALG2'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpk03996/">SALPK03996</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPK'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpa03824/">SALPA03824</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPA'];
+                </script>
+                
+            </dl>
+        </div>
+    </div>
+
+    
+    <div id="legendmodal" class="uk-modal" name="help_table">
+        <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close"></a>
+            <div class="uk-modal-header">Legend for interactions table</div>
+            
+            <h3>Metabolic layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Enzymes of the metabolic reaction</dd>
+                <dt>Links</dt>
+                <dd>Two nodes are linked if the rections they catalyse have a common substrate and/or product.</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>BioModels</td>
+                            <td>The links were obtained from the EC numbers of https://www.ebi.ac.uk/biomodels-main/
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STM</td>
+                            <td>Orthologous enzymes from a validated mathematical model of S. Typhymurium LT2
+                                (PMID:21244678)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+            <h3>Regulatory layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>TF (Transcription Factors)<br>TG (Target genes)</dd>
+                <dt>Links</dt>
+                <dd>Regulatory links represent binding of transcription factors to gene promoters (undirected links)
+                </dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Ecoli</td>
+                            <td>The links were obtained by alignement of the promoter regions to binding sites of
+                                orthologous genes from E. coli as described in <a href="http://regulondb.ccg.unam.mx/" target="_blank">RegulonDB</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salm</td>
+                            <td>The links were obtained using Position Specific Scoring Matrices (PSSMs) from binding
+                                sites
+                                of Salmonella found in the literature
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp(LT)</td>
+                            <td>The links were determined experimentally by low-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EXP(HT)</td>
+                            <td>The links were determined experimentally by high-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+
+            <h3>PPI layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Proteins</dd>
+                <dt>Links</dt>
+                <dd>Orthologous proteins of E. coli which bind together</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Lit_Ecoli</td>
+                            <td>The links were derived from a <a href="https://www.ncbi.nlm.nih.gov/pubmed/24561554" target="_blank">publication (PMID:24561554)</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IntAct</td>
+                            <td>The links were derived from the <a href="http://www.ebi.ac.uk/intact/" target="_blank">Intact</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Biogrid</td>
+                            <td>The links were derived from the <a href="http://thebiogrid.org/" target="_blank">Biogrid</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Interactome3d</td>
+                            <td>The links were derived from the <a href="http://interactome3d.irbbarcelona.org/)" target="_blank">Interactome3D</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp</td>
+                            <td>The binding interactions were determined experimentally (PMID indicates the pubmed
+                                reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="uk-modal-footer">...</div>
+    </div>
+</div>
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="http://salmonet.org/">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-73347324-4', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

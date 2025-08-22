@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SALG200916 &middot; SalmoNet2</title>
+    <link rel="stylesheet" href="http://salmonet.org//css/style.css"/>
+    <script>
+        var data_url_prefix = "http:\/\/salmonet.org\/";
+    </script>
+    <script src="http://salmonet.org//js/app.js"></script>
+</head>
+
+<body>
+<div class="net-top-navbar" data-uk-sticky="">
+    <div class="uk-container uk-container-center">
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="http://salmonet.org/">SalmoNet2</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="">
+                    <a href="http://salmonet.org//">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse/">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download/">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org//index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial/">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/salmonella-TF-activity">SalmonAct</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SalmoNet2</div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-panel uk-panel-box uk-text-center">
+                <h1>ompF</h1>
+            </div>
+        </div>
+    </div>
+
+    <hr class="uk-grid-divider">
+    
+    <script>
+
+    var dict = {
+        "SALA4": "Salmonella enterica subsp. enterica serovar Agona str. SL483",
+        "SALAR": "Salmonella enterica subsp. arizonae serovar 62:z4,z23",
+        "SALBC": "Salmonella bongori NCTC 12419",
+        "SALCH": "Salmonella enterica subsp. enterica serovar Choleraesuis str. SC-B67",
+        "SALDC": "Salmonella enterica subsp. enterica serovar Dublin str. CT_02021853",
+        "SALEP": "Salmonella enterica subsp. enterica serovar Enteritidis str. P125109",
+        "SALG2": "Salmonella enterica subsp. enterica serovar Gallinarum str. 287/91",
+        "SALHS": "Salmonella enterica subsp. enterica serovar Heidelberg str. SL476",
+        "SALNS": "Salmonella enterica subsp. enterica serovar Newport str. SL254",
+        "SALPK": "Salmonella enterica subsp. enterica serovar Paratyphi A str. AKU_12601",
+        "SALPA": "Salmonella enterica subsp. enterica serovar Paratyphi A str. ATCC 9150",
+        "SALPB": "Salmonella enterica subsp. enterica serovar Paratyphi B str. SPB7",
+        "SALPC": "Salmonella enterica subsp. enterica serovar Paratyphi C str. RKS4594",
+        "SALSV": "Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633",
+        "SALTI": "Salmonella enterica subsp. enterica serovar Typhi str. CT18",
+        "SALT1": "Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S",
+        "SALT4": "Salmonella enterica subsp. enterica serovar Typhimurium str. ST4/74",
+        "SALTD": "Salmonella enterica subsp. enterica serovar Typhimurium str. D23580",
+        "SALTY": "Salmonella enterica subsp. enterica serovar Typhimurium str. LT2",
+        "SALTS": "Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344",
+    };
+
+    window.onload = function() {
+        var actual_strain = dict['SALG2'];
+
+        document.getElementById('strain_original').innerHTML = actual_strain;
+    }
+
+    </script>
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <dl class="uk-description-list-horizontal" style="width: 250%;">
+                <dt>Gene name/Locus tag (old)</dt>
+                <dd>ompF</dd>
+                <dt>Locus tag (old)</dt>
+                <dd>SG0941</dd>
+                <dt>Locus tag (new)</dt>
+                <dd>SG_RS04765</dd>
+                <dt>KEGG ID</dt>
+                <dd>seg:SG0941</dd>
+                <dt>OMA Identifier</dt>
+                <dd><a id="uniprot" href="https://omabrowser.org/oma/info/SALG200916" target="_blank">SALG200916</a></dd>
+                <dd><a href="https://omabrowser.org/oma/info/SALG200916/fasta" target="_blank">Protein sequence</a></dd>
+                <dt>Strain</dt>
+                <dd><i><p id="strain_original"></p></i></dd>
+            </dl>
+        </div>
+        <div class="uk-width-medium-1-2">
+
+        </div>
+    </div>
+
+
+    <hr class="uk-grid-divider">
+
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Interactions</h2>
+            <div id="interactiontablediv" ></div>
+            <input id="interactiontabledata" type="hidden" name="interactiontabledata" value="SG0534,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS02665,SG_RS04765,SALG200517,SALG200916,810,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+clcB,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS08230,SG_RS04765,SALG201575,SALG200916,1221,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+fadK,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS08915,SG_RS04765,SALG201709,SALG200916,580,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG2453,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS12340,SG_RS04765,SALG202355,SALG200916,1238,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+gudP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS14435,SG_RS04765,SALG202754,SALG200916,978,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+uhpT,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18505,SG_RS04765,SALG203507,SALG200916,938,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3733,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18905,SG_RS04765,SALG203587,SALG200916,1095,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3605,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18300,SG_RS04765,SALG203467,SALG200916,1037,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SALG2_Chromosome.43,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SALG2_Chromosome.43,SG_RS04765,SALG200043,SALG200916,868,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+pagP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS03150,SG_RS04765,SALG200614,SALG200916,3781,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ompF,pagP,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS04765,SG_RS03150,SALG200916,SALG200614,1682,3781,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3007,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15140,SG_RS04765,SALG202887,SALG200916,1217,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+idnT,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS21775,SG_RS04765,SALG204142,SALG200916,989,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3246,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS16350,SG_RS04765,SALG203119,SALG200916,1154,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG2318,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS11655,SG_RS04765,SALG202226,SALG200916,1235,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SALG2_Chromosome.2222,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SALG2_Chromosome.2222,SG_RS04765,SALG202210,SALG200916,1053,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG0164,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS00830,SG_RS04765,SALG200160,SALG200916,2081,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+pspE,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS07260,SG_RS04765,SALG201385,SALG200916,5201,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+fadD,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS06590,SG_RS04765,SALG201261,SALG200916,540,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ansP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS07805,SG_RS04765,SALG201491,SALG200916,748,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+torC,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18320,SG_RS04765,SALG203471,SALG200916,1380,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+tdcC,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15805,SG_RS04765,SALG203014,SALG200916,1057,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+pduF,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS10440,SG_RS04765,SALG201993,SALG200916,1733,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+pgtP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS12230,SG_RS04765,SALG202339,SALG200916,912,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+fucP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18480,SG_RS04765,SALG203502,SALG200916,1101,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+eutH,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS12535,SG_RS04765,SALG202393,SALG200916,1360,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+aroP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS00770,SG_RS04765,SALG200148,SALG200916,958,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+dctA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS19350,SG_RS04765,SALG203673,SALG200916,1174,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+agp,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS05100,SG_RS04765,SALG200980,SALG200916,1266,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+torA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18325,SG_RS04765,SALG203472,SALG200916,139,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+cueO,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS00865,SG_RS04765,SALG200167,SALG200916,590,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+actP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS20810,SG_RS04765,SALG203958,SALG200916,595,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+putP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS05135,SG_RS04765,SALG200987,SALG200916,732,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+nanT,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS16260,SG_RS04765,SALG203101,SALG200916,762,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ampG,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS02285,SG_RS04765,SALG200441,SALG200916,798,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+araE,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS14710,SG_RS04765,SALG202805,SALG200916,844,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+melB,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS20960,SG_RS04765,SALG203985,SALG200916,848,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+panF,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS16485,SG_RS04765,SALG203145,SALG200916,876,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+cycA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS21445,SG_RS04765,SALG204077,SALG200916,885,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+gabP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS13555,SG_RS04765,SALG202584,SALG200916,917,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+clcA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS01040,SG_RS04765,SALG200202,SALG200916,918,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+pheP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS02885,SG_RS04765,SALG200561,SALG200916,926,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG4074,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS20600,SG_RS04765,SALG203917,SALG200916,935,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+hpaX,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS05050,SG_RS04765,SALG200970,SALG200916,945,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+xanP,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS18665,SG_RS04765,SALG203539,SALG200916,973,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3028,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15250,SG_RS04765,SALG202907,SALG200916,1090,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG2638,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS13240,SG_RS04765,SALG202531,SALG200916,1142,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+amtB,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS02380,SG_RS04765,SALG200460,SALG200916,1225,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+uraA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS12725,SG_RS04765,SALG202431,SALG200916,1241,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+codB,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS16235,SG_RS04765,SALG203096,SALG200916,1300,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+mtr,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15955,SG_RS04765,SALG203044,SALG200916,1317,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ompS2,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS08305,SG_RS04765,SALG201589,SALG200916,1518,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG2295,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS11545,SG_RS04765,SALG202204,SALG200916,1573,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG2591,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS13005,SG_RS04765,SALG202485,SALG200916,1586,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+galM,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS03810,SG_RS04765,SALG200732,SALG200916,1822,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+rhaT,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS17000,SG_RS04765,SALG203239,SALG200916,1846,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ansB,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15105,SG_RS04765,SALG202880,SALG200916,1874,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG3333,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS16810,SG_RS04765,SALG203202,SALG200916,2684,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+tcyJ,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS05575,SG_RS04765,SALG201070,SALG200916,2914,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ompL,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS17190,SG_RS04765,SALG203275,SALG200916,2943,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+zupT,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS15535,SG_RS04765,SALG202963,SALG200916,3039,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+SG0735,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS03730,SG_RS04765,SALG200717,SALG200916,3169,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+aphA,ompF,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS20690,SG_RS04765,SALG203935,SALG200916,3218,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ompF,ompL,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS04765,SG_RS17190,SALG200916,SALG203275,1682,2943,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+ompF,queD,PMID:31455646&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=31455646%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Metabolic,-,-,SG_RS04765,SG_RS14340,SALG200916,SALG202735,1682,4917,&#34;SALG2&#34;,&#34;SALG2&#34;,PMID:31455646,31455646
+degP,ompF,IntAct&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,0.5968954,cross-linking study|pull down|molecular sieving,SG_RS01070,SG_RS04765,SALG200208,SALG200916,883,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,IntAct,22121220
+ompF,ompF,IntAct Interactome3d&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=22121220%5Buid%5D&#43;OR&#43;23399932%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SG_RS04765,SG_RS04765,SALG200916,SALG200916,1682,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,IntAct Interactome3d,22121220,23399932
+ompF,mlaA,Interactome3d&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=23399932%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,PPI,-,-,SG_RS04765,SG_RS12175,SALG200916,SALG202328,1682,2792,&#34;SALG2&#34;,&#34;SALG2&#34;,Interactome3d,23399932
+rstA,ompF,RegulonDB&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=30395280%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Regulatory,-,-,SG_RS08295,SG_RS04765,SALG201588,SALG200916,3205,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,RegulonDB,30395280
+ompR,ompF,RegulonDB&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=30395280%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Regulatory,-,-,SG_RS19900,SG_RS04765,SALG203783,SALG200916,3233,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,RegulonDB,30395280
+cpxR,ompF,RegulonDB&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=30395280%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Regulatory,-,-,SG_RS16945,SG_RS04765,SALG203230,SALG200916,3384,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,RegulonDB,30395280
+crp,ompF,RegulonDB&amp;ensp;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/?term=30395280%5Buid%5D&#34; target=&#34;_blank&#34;&gt;&lt;i class=&#34;uk-icon-newspaper-o&#34;&gt;&lt;/i&gt;&lt;/a&gt;,Regulatory,-,-,SG_RS20075,SG_RS04765,SALG203818,SALG200916,3616,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,RegulonDB,30395280
+mntR,ompF,Salm&amp;ensp;&lt;a style=&#34;color: #1F2421 !important;&#34; class=&#34;uk-icon-justify uk-icon-question-circle&#34; href=&#34;#legendmodal&#34; data-uk-modal&gt;&lt;/a&gt;,Regulatory,-,-,SG_RS04120,SG_RS04765,SALG200793,SALG200916,4394,1682,&#34;SALG2&#34;,&#34;SALG2&#34;,Salm,based on orthology">
+            <p class="uk-text-small">(Download may not work in Safari)</p>
+        </div>
+        <div class="uk-width-medium-1-2">
+            <h2>&nbsp;</h2>
+            <div id="interactionnetworkdiv" style="height: 450px;"></div>
+            <div id="interactionnetworkcontrolldiv" style="width: 100%;"></div>
+            <input id="interactionnetworkdata" type="hidden" name="interactionnetworkdata" value="[{&#34;data&#34;: {&#34;id&#34;: &#34;SG0534_ompF&#34;, &#34;source&#34;: &#34;SG0534&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clcB_ompF&#34;, &#34;source&#34;: &#34;clcB&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fadK_ompF&#34;, &#34;source&#34;: &#34;fadK&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2453_ompF&#34;, &#34;source&#34;: &#34;SG2453&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;gudP_ompF&#34;, &#34;source&#34;: &#34;gudP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uhpT_ompF&#34;, &#34;source&#34;: &#34;uhpT&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3733_ompF&#34;, &#34;source&#34;: &#34;SG3733&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3605_ompF&#34;, &#34;source&#34;: &#34;SG3605&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SALG2_Chromosome.43_ompF&#34;, &#34;source&#34;: &#34;SALG2_Chromosome.43&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pagP_ompF&#34;, &#34;source&#34;: &#34;pagP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF_pagP&#34;, &#34;source&#34;: &#34;ompF&#34;, &#34;target&#34;: &#34;pagP&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3007_ompF&#34;, &#34;source&#34;: &#34;SG3007&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;idnT_ompF&#34;, &#34;source&#34;: &#34;idnT&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3246_ompF&#34;, &#34;source&#34;: &#34;SG3246&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2318_ompF&#34;, &#34;source&#34;: &#34;SG2318&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SALG2_Chromosome.2222_ompF&#34;, &#34;source&#34;: &#34;SALG2_Chromosome.2222&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG0164_ompF&#34;, &#34;source&#34;: &#34;SG0164&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pspE_ompF&#34;, &#34;source&#34;: &#34;pspE&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fadD_ompF&#34;, &#34;source&#34;: &#34;fadD&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ansP_ompF&#34;, &#34;source&#34;: &#34;ansP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;torC_ompF&#34;, &#34;source&#34;: &#34;torC&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tdcC_ompF&#34;, &#34;source&#34;: &#34;tdcC&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pduF_ompF&#34;, &#34;source&#34;: &#34;pduF&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pgtP_ompF&#34;, &#34;source&#34;: &#34;pgtP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fucP_ompF&#34;, &#34;source&#34;: &#34;fucP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;eutH_ompF&#34;, &#34;source&#34;: &#34;eutH&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroP_ompF&#34;, &#34;source&#34;: &#34;aroP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;dctA_ompF&#34;, &#34;source&#34;: &#34;dctA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;agp_ompF&#34;, &#34;source&#34;: &#34;agp&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;torA_ompF&#34;, &#34;source&#34;: &#34;torA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cueO_ompF&#34;, &#34;source&#34;: &#34;cueO&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;actP_ompF&#34;, &#34;source&#34;: &#34;actP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;putP_ompF&#34;, &#34;source&#34;: &#34;putP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;nanT_ompF&#34;, &#34;source&#34;: &#34;nanT&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ampG_ompF&#34;, &#34;source&#34;: &#34;ampG&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;araE_ompF&#34;, &#34;source&#34;: &#34;araE&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;melB_ompF&#34;, &#34;source&#34;: &#34;melB&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;panF_ompF&#34;, &#34;source&#34;: &#34;panF&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cycA_ompF&#34;, &#34;source&#34;: &#34;cycA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;gabP_ompF&#34;, &#34;source&#34;: &#34;gabP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clcA_ompF&#34;, &#34;source&#34;: &#34;clcA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pheP_ompF&#34;, &#34;source&#34;: &#34;pheP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG4074_ompF&#34;, &#34;source&#34;: &#34;SG4074&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hpaX_ompF&#34;, &#34;source&#34;: &#34;hpaX&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;xanP_ompF&#34;, &#34;source&#34;: &#34;xanP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3028_ompF&#34;, &#34;source&#34;: &#34;SG3028&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2638_ompF&#34;, &#34;source&#34;: &#34;SG2638&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;amtB_ompF&#34;, &#34;source&#34;: &#34;amtB&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uraA_ompF&#34;, &#34;source&#34;: &#34;uraA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;codB_ompF&#34;, &#34;source&#34;: &#34;codB&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mtr_ompF&#34;, &#34;source&#34;: &#34;mtr&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompS2_ompF&#34;, &#34;source&#34;: &#34;ompS2&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2295_ompF&#34;, &#34;source&#34;: &#34;SG2295&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2591_ompF&#34;, &#34;source&#34;: &#34;SG2591&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;galM_ompF&#34;, &#34;source&#34;: &#34;galM&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rhaT_ompF&#34;, &#34;source&#34;: &#34;rhaT&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ansB_ompF&#34;, &#34;source&#34;: &#34;ansB&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3333_ompF&#34;, &#34;source&#34;: &#34;SG3333&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tcyJ_ompF&#34;, &#34;source&#34;: &#34;tcyJ&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompL_ompF&#34;, &#34;source&#34;: &#34;ompL&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;zupT_ompF&#34;, &#34;source&#34;: &#34;zupT&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG0735_ompF&#34;, &#34;source&#34;: &#34;SG0735&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aphA_ompF&#34;, &#34;source&#34;: &#34;aphA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF_ompL&#34;, &#34;source&#34;: &#34;ompF&#34;, &#34;target&#34;: &#34;ompL&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF_queD&#34;, &#34;source&#34;: &#34;ompF&#34;, &#34;target&#34;: &#34;queD&#34;, &#34;type&#34;: &#34;Metabolic&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;degP_ompF&#34;, &#34;source&#34;: &#34;degP&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF_ompF&#34;, &#34;source&#34;: &#34;ompF&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF_mlaA&#34;, &#34;source&#34;: &#34;ompF&#34;, &#34;target&#34;: &#34;mlaA&#34;, &#34;type&#34;: &#34;PPI&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rstA_ompF&#34;, &#34;source&#34;: &#34;rstA&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompR_ompF&#34;, &#34;source&#34;: &#34;ompR&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cpxR_ompF&#34;, &#34;source&#34;: &#34;cpxR&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;crp_ompF&#34;, &#34;source&#34;: &#34;crp&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mntR_ompF&#34;, &#34;source&#34;: &#34;mntR&#34;, &#34;target&#34;: &#34;ompF&#34;, &#34;type&#34;: &#34;Regulatory&#34;}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG0534&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompF&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: true}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clcB&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fadK&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2453&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;gudP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uhpT&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3733&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3605&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SALG2_Chromosome.43&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pagP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3007&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;idnT&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3246&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2318&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SALG2_Chromosome.2222&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG0164&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pspE&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fadD&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ansP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;torC&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tdcC&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pduF&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pgtP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;fucP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;eutH&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aroP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;dctA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;agp&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;torA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cueO&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;actP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;putP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;nanT&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ampG&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;araE&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;melB&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;panF&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cycA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;gabP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;clcA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;pheP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG4074&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;hpaX&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;xanP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3028&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2638&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;amtB&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;uraA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;codB&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mtr&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompS2&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2295&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG2591&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;galM&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rhaT&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ansB&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG3333&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;tcyJ&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompL&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;zupT&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;SG0735&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;aphA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;queD&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;degP&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mlaA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;rstA&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;ompR&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;cpxR&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;crp&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}, {&#34;data&#34;: {&#34;id&#34;: &#34;mntR&#34;, &#34;oma&#34;: &#34;SALG200916&#34;, &#34;main&#34;: false}}]">
+        </div>
+    </div>
+    <hr class="uk-grid-divider">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-2">
+            <h2>Orthologs of ompF</h2>
+            <dl class="uk-description-list-horizontal" style="width: 200%;">
+                
+                <dt><a href="http://salmonet.org/protein/salbc00850/">SALBC00850</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALBC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salar01881/">SALAR01881</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALAR'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saldc00967/">SALDC00967</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALDC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salep00894/">SALEP00894</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALEP'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpb02421/">SALPB02421</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPB'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salhs01017/">SALHS01017</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALHS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpc00965/">SALPC00965</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPC'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salty00967/">SALTY00967</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTY'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salns00969/">SALNS00969</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALNS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/saltd01000/">SALTD01000</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTD'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salts00928/">SALTS00928</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTS'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt101090/">SALT101090</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT1'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/sala400933/">SALA400933</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALA4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salt400945/">SALT400945</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALT4'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salch00947/">SALCH00947</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALCH'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salg200916/">SALG200916</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALG2'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salti00909/">SALTI00909</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALTI'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salsv01042/">SALSV01042</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALSV'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpa01668/">SALPA01668</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPA'];
+                </script>
+                
+                <dt><a href="http://salmonet.org/protein/salpk01745/">SALPK01745</a></dt>
+                <dd><i><p id="actual_ortholog_strain"></p></i></dd>
+                <script>
+                    document.getElementById("actual_ortholog_strain").innerHTML = dict['SALPK'];
+                </script>
+                
+            </dl>
+        </div>
+    </div>
+
+    
+    <div id="legendmodal" class="uk-modal" name="help_table">
+        <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close"></a>
+            <div class="uk-modal-header">Legend for interactions table</div>
+            
+            <h3>Metabolic layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Enzymes of the metabolic reaction</dd>
+                <dt>Links</dt>
+                <dd>Two nodes are linked if the rections they catalyse have a common substrate and/or product.</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>BioModels</td>
+                            <td>The links were obtained from the EC numbers of https://www.ebi.ac.uk/biomodels-main/
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STM</td>
+                            <td>Orthologous enzymes from a validated mathematical model of S. Typhymurium LT2
+                                (PMID:21244678)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+            <h3>Regulatory layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>TF (Transcription Factors)<br>TG (Target genes)</dd>
+                <dt>Links</dt>
+                <dd>Regulatory links represent binding of transcription factors to gene promoters (undirected links)
+                </dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Ecoli</td>
+                            <td>The links were obtained by alignement of the promoter regions to binding sites of
+                                orthologous genes from E. coli as described in <a href="http://regulondb.ccg.unam.mx/" target="_blank">RegulonDB</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salm</td>
+                            <td>The links were obtained using Position Specific Scoring Matrices (PSSMs) from binding
+                                sites
+                                of Salmonella found in the literature
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp(LT)</td>
+                            <td>The links were determined experimentally by low-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EXP(HT)</td>
+                            <td>The links were determined experimentally by high-throughput experiments (PMID indicates
+                                the
+                                pubmed reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+
+            <h3>PPI layer</h3>
+            <dl class="uk-description-list-horizontal">
+                <dt>Nodes</dt>
+                <dd>Proteins</dd>
+                <dt>Links</dt>
+                <dd>Orthologous proteins of E. coli which bind together</dd>
+                <dt>Source</dt>
+                <dd>
+                    <table class="uk-table">
+                        <tbody>
+                        <tr>
+                            <td>Lit_Ecoli</td>
+                            <td>The links were derived from a <a href="https://www.ncbi.nlm.nih.gov/pubmed/24561554" target="_blank">publication (PMID:24561554)</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IntAct</td>
+                            <td>The links were derived from the <a href="http://www.ebi.ac.uk/intact/" target="_blank">Intact</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Biogrid</td>
+                            <td>The links were derived from the <a href="http://thebiogrid.org/" target="_blank">Biogrid</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Interactome3d</td>
+                            <td>The links were derived from the <a href="http://interactome3d.irbbarcelona.org/)" target="_blank">Interactome3D</a> database
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Exp</td>
+                            <td>The binding interactions were determined experimentally (PMID indicates the pubmed
+                                reference)
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div class="uk-modal-footer">...</div>
+    </div>
+</div>
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="http://salmonet.org/">Home</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/browse">Browse</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/download">Download</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#cite">Cite</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="http://salmonet.org/tutorial">Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://github.com/korcsmarosgroup/SalmoNet2">GitHub</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-73347324-4', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
